@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobFinderApi</title>
+    <link rel="stylesheet" href="./Css/Style.css">
+</head>
+
+<body>
+    <h1>Job Finder CRUD</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" onsubmit="addItem()">
+        <input type="text" id="Location" placeholder="Job Location"><br>
+        <input type="text" id="JobFieldCategory" placeholder="Job Field Category"><br>
+        <input type="number" id="Sallery" placeholder="sallery"><br>
+        <textarea id="JobDescription" rows="5" cols="40" placeholder="Job Description"></textarea><br>
+        <input type="datetime" id="PostedDate" placeholder="Posted Date"><br>
+        <input type="submit" value="Add">
+
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="editItems()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-location" placeholder="Job Location"><br>
+            <input type="text" id="edit-JobFieldCategory" placeholder="Job Field Category"><br>
+            <input type="number" id="edit-Sallery" placeholder="Sallery"><br>
+            <textarea id="edit-JobDescription" rows="5" cols="40" placeholder="Job Description"></textarea><br>
+            <input type="datetime" id="edit-PostedDate" placeholder="Posted Date"><br>
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Job Location</th>
+            <th>Job Field Category</th>
+            <th>Sallery</th>
+            <th>Job Description</th>
+            <th>Posted Date</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="Jobs"></tbody>
+    </table>
+
+    <script src="Js/app.js" asp-append-version="true"></script>
+    <script>
+        getItems();
+    </script>
+
+</body>
+
+</html>

@@ -8,14 +8,17 @@ namespace WebApiProject.services
 
     public class JobFinderService : IJobFinderService
     {
+
+       
+
         private List<JobFinderAPI> JobList;
         public JobFinderService()
         {
             JobList = new List<JobFinderAPI>
         {
 
-            new JobFinderAPI{JobId=111,Location="Jerusalem",JobFieldCategory="Programming",Sallery=19000,JobDescription="",PostedDate=DateTime.Now},
-            new JobFinderAPI{JobId=222,Location="Modi'n",JobFieldCategory="Programming",Sallery=20000,JobDescription="",PostedDate=DateTime.Now}
+            new JobFinderAPI{JobId=111,Location="Jerusalem",JobFieldCategory="Programming",Sallery=19000,JobDescription="Amazing Job.",PostedDate=DateTime.Now},
+            new JobFinderAPI{JobId=222,Location="Modi'n",JobFieldCategory="Programming",Sallery=20000,JobDescription="High level technologic",PostedDate=DateTime.Now}
 
         };
         }
