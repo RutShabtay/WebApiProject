@@ -1,3 +1,4 @@
+using myMiddleWareExceptions;
 using WebApiProject.Interface;
 using WebApiProject.services;
 
@@ -13,6 +14,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddJobFinderServices();
 var app = builder.Build();
+
+
+app.useMyMiddleWareExceptions();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
