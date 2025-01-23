@@ -1,6 +1,8 @@
 using myMiddleWareExceptions;
 using WebApiProject.Interface;
 using WebApiProject.services;
+using Serilog;
+using myLoggerMiddleWare;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddJobFinderServices();
+builder.Host.UseSerilog((context, config) =>
+{
+    config
+        .WriteTo.Console()
+        .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day) // כתיבה לקובץ, מתחדש כל יום
+        .MinimumLevel.Debug();
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -16,6 +26,7 @@ builder.Services.AddJobFinderServices();
 var app = builder.Build();
 
 
+app.UseMyLogMiddleWare();
 app.useMyMiddleWareExceptions();
 
 // Configure the HTTP request pipeline.

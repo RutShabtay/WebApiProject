@@ -13,7 +13,7 @@ public class ExceptionMiddleWare
         try
         {
             await next.Invoke(httpContext);
-            throw new Exception("Ruti");
+            // throw new Exception("Ruti");
         }
         catch (Exception e)
         {
