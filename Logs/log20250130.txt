@@ -1,0 +1,505 @@
+2025-01-30 01:16:45.417 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-01-30 01:16:45.591 +02:00 [DBG] Hosting starting
+2025-01-30 01:16:45.641 +02:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-30 01:16:45.666 +02:00 [DBG] Reading data from file 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys\key-6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c.xml'.
+2025-01-30 01:16:45.709 +02:00 [DBG] Found key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c}.
+2025-01-30 01:16:45.724 +02:00 [DBG] Considering key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} with expiration date 2025-04-28 16:45:02Z as default key.
+2025-01-30 01:16:45.731 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-01-30 01:16:45.739 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-01-30 01:16:45.742 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-01-30 01:16:45.753 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-01-30 01:16:45.758 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-01-30 01:16:45.762 +02:00 [DBG] Using key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} as the default key.
+2025-01-30 01:16:45.766 +02:00 [DBG] Key ring with default key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} was loaded during application startup.
+2025-01-30 01:16:45.837 +02:00 [INF] Now listening on: http://localhost:5255
+2025-01-30 01:16:45.840 +02:00 [DBG] Loaded hosting startup assembly WebApiProject
+2025-01-30 01:16:45.842 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-30 01:16:45.844 +02:00 [INF] Hosting environment: Development
+2025-01-30 01:16:45.846 +02:00 [INF] Content root path: C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject-main
+2025-01-30 01:16:45.848 +02:00 [DBG] Hosting started
+2025-01-30 01:16:51.590 +02:00 [DBG] Connection id "0HNA0NC1LNGAT" accepted.
+2025-01-30 01:16:51.594 +02:00 [DBG] Connection id "0HNA0NC1LNGAT" started.
+2025-01-30 01:16:51.597 +02:00 [DBG] Connection id "0HNA0NC1LNGAU" accepted.
+2025-01-30 01:16:51.604 +02:00 [DBG] Connection id "0HNA0NC1LNGAU" started.
+2025-01-30 01:16:51.850 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/favicon.ico - null null
+2025-01-30 01:16:51.857 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-01-30 01:16:51.874 +02:00 [DBG] 1 candidate(s) found for the request path '/favicon.ico'
+2025-01-30 01:16:51.883 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'favicon.ico' for the request path '/favicon.ico'
+2025-01-30 01:16:51.893 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/favicon.ico'
+2025-01-30 01:16:51.898 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 01:16:51.976 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 01:16:51.991 +02:00 [DBG] The request path  does not match the path filter
+2025-01-30 01:16:52.001 +02:00 [DBG] The request path /favicon.ico does not match an existing file
+2025-01-30 01:16:52.006 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-30 01:16:52.014 +02:00 [DBG] /favicon.ico.GET took 34ms. User: unknown
+2025-01-30 01:16:52.022 +02:00 [DBG] Connection id "0HNA0NC1LNGAT" completed keep alive response.
+2025-01-30 01:16:52.026 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/favicon.ico - 404 0 null 176.8278ms
+2025-01-30 01:16:52.040 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5255/favicon.ico, Response status code: 404
+2025-01-30 01:16:57.239 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/index.html - null null
+2025-01-30 01:16:57.249 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/index.html'
+2025-01-30 01:16:57.254 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/index.html' for the request path '/swagger/index.html'
+2025-01-30 01:16:57.267 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/index.html'
+2025-01-30 01:16:57.278 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 01:16:57.292 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 01:16:57.479 +02:00 [DBG] /swagger/index.html.GET took 178ms. User: unknown
+2025-01-30 01:16:57.484 +02:00 [DBG] Connection id "0HNA0NC1LNGAT" completed keep alive response.
+2025-01-30 01:16:57.490 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/index.html - 200 null text/html;charset=utf-8 250.3527ms
+2025-01-30 01:16:57.760 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - null null
+2025-01-30 01:16:57.769 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/v1/swagger.json'
+2025-01-30 01:16:57.774 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/v1/swagger.json' for the request path '/swagger/v1/swagger.json'
+2025-01-30 01:16:57.789 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/v1/swagger.json'
+2025-01-30 01:16:57.798 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 01:16:57.810 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 01:16:58.000 +02:00 [DBG] /swagger/v1/swagger.json.GET took 183ms. User: unknown
+2025-01-30 01:16:58.004 +02:00 [DBG] Connection id "0HNA0NC1LNGAT" completed keep alive response.
+2025-01-30 01:16:58.019 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - 500 null null 258.8315ms
+2025-01-30 01:17:52.127 +02:00 [DBG] Connection id "0HNA0NC1LNGAU" received FIN.
+2025-01-30 01:17:52.138 +02:00 [DBG] Connection id "0HNA0NC1LNGAU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 01:17:52.147 +02:00 [DBG] Connection id "0HNA0NC1LNGAU" disconnecting.
+2025-01-30 01:17:52.157 +02:00 [DBG] Connection id "0HNA0NC1LNGAU" stopped.
+2025-01-30 01:19:08.993 +02:00 [DBG] Connection id "0HNA0NC1LNGAT" disconnecting.
+2025-01-30 01:19:08.996 +02:00 [DBG] Connection id "0HNA0NC1LNGAT" stopped.
+2025-01-30 01:19:09.001 +02:00 [DBG] Connection id "0HNA0NC1LNGAT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 01:43:18.558 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-01-30 01:43:18.662 +02:00 [DBG] Hosting starting
+2025-01-30 01:43:18.678 +02:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-30 01:43:18.694 +02:00 [DBG] Reading data from file 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys\key-6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c.xml'.
+2025-01-30 01:43:18.709 +02:00 [DBG] Found key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c}.
+2025-01-30 01:43:18.725 +02:00 [DBG] Considering key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} with expiration date 2025-04-28 16:45:02Z as default key.
+2025-01-30 01:43:18.734 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-01-30 01:43:18.744 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-01-30 01:43:18.750 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-01-30 01:43:18.762 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-01-30 01:43:18.766 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-01-30 01:43:18.772 +02:00 [DBG] Using key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} as the default key.
+2025-01-30 01:43:18.778 +02:00 [DBG] Key ring with default key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} was loaded during application startup.
+2025-01-30 01:43:18.827 +02:00 [INF] Now listening on: http://localhost:5255
+2025-01-30 01:43:18.830 +02:00 [DBG] Loaded hosting startup assembly WebApiProject
+2025-01-30 01:43:18.832 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-30 01:43:18.833 +02:00 [INF] Hosting environment: Development
+2025-01-30 01:43:18.835 +02:00 [INF] Content root path: C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject-main
+2025-01-30 01:43:18.836 +02:00 [DBG] Hosting started
+2025-01-30 01:43:22.281 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" accepted.
+2025-01-30 01:43:22.285 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" started.
+2025-01-30 01:43:22.286 +02:00 [DBG] Connection id "0HNA0NQRNO6I9" accepted.
+2025-01-30 01:43:22.296 +02:00 [DBG] Connection id "0HNA0NQRNO6I9" started.
+2025-01-30 01:43:25.464 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5255/JobFinderAPI - application/json 96
+2025-01-30 01:43:25.470 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-01-30 01:43:25.486 +02:00 [DBG] 1 candidate(s) found for the request path '/JobFinderAPI'
+2025-01-30 01:43:25.491 +02:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-01-30 01:43:25.521 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 01:43:25.538 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 01:43:25.541 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 01:43:25.546 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-30 01:43:25.556 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-01-30 01:43:25.559 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-01-30 01:43:25.565 +02:00 [DBG] /JobFinderAPI.POST took 36ms. User: unknown
+2025-01-30 01:43:25.573 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" completed keep alive response.
+2025-01-30 01:43:25.580 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5255/JobFinderAPI - 405 0 null 116.8571ms
+2025-01-30 01:43:25.593 +02:00 [DBG] Connection id "0HNA0NQRNO6I8", Request id "0HNA0NQRNO6I8:00000001": started reading request body.
+2025-01-30 01:43:25.595 +02:00 [DBG] Connection id "0HNA0NQRNO6I8", Request id "0HNA0NQRNO6I8:00000001": done reading request body.
+2025-01-30 01:43:27.011 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5255/JobFinderAPI - application/json 96
+2025-01-30 01:43:27.020 +02:00 [DBG] 1 candidate(s) found for the request path '/JobFinderAPI'
+2025-01-30 01:43:27.027 +02:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-01-30 01:43:27.032 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 01:43:27.035 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 01:43:27.038 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 01:43:27.043 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-01-30 01:43:27.047 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-01-30 01:43:27.051 +02:00 [DBG] /JobFinderAPI.POST took 16ms. User: unknown
+2025-01-30 01:43:27.056 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" completed keep alive response.
+2025-01-30 01:43:27.059 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5255/JobFinderAPI - 405 0 null 47.7273ms
+2025-01-30 01:43:27.068 +02:00 [DBG] Connection id "0HNA0NQRNO6I8", Request id "0HNA0NQRNO6I8:00000002": started reading request body.
+2025-01-30 01:43:27.072 +02:00 [DBG] Connection id "0HNA0NQRNO6I8", Request id "0HNA0NQRNO6I8:00000002": done reading request body.
+2025-01-30 01:43:31.818 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/index.html - null null
+2025-01-30 01:43:31.827 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/index.html'
+2025-01-30 01:43:31.849 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/index.html' for the request path '/swagger/index.html'
+2025-01-30 01:43:31.878 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/index.html'
+2025-01-30 01:43:31.892 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 01:43:31.907 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 01:43:32.099 +02:00 [DBG] /swagger/index.html.GET took 183ms. User: unknown
+2025-01-30 01:43:32.101 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" completed keep alive response.
+2025-01-30 01:43:32.104 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/index.html - 200 null text/html;charset=utf-8 285.7071ms
+2025-01-30 01:43:32.438 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - null null
+2025-01-30 01:43:32.449 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/v1/swagger.json'
+2025-01-30 01:43:32.454 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/v1/swagger.json' for the request path '/swagger/v1/swagger.json'
+2025-01-30 01:43:32.466 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/v1/swagger.json'
+2025-01-30 01:43:32.475 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 01:43:32.479 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 01:43:32.659 +02:00 [DBG] /swagger/v1/swagger.json.GET took 174ms. User: unknown
+2025-01-30 01:43:32.665 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" completed keep alive response.
+2025-01-30 01:43:32.672 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - 500 null null 232.658ms
+2025-01-30 01:44:23.640 +02:00 [DBG] Connection id "0HNA0NQRNO6I9" received FIN.
+2025-01-30 01:44:23.647 +02:00 [DBG] Connection id "0HNA0NQRNO6I9" disconnecting.
+2025-01-30 01:44:23.674 +02:00 [DBG] Connection id "0HNA0NQRNO6I9" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 01:44:23.688 +02:00 [DBG] Connection id "0HNA0NQRNO6I9" stopped.
+2025-01-30 01:45:43.230 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" disconnecting.
+2025-01-30 01:45:43.235 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" stopped.
+2025-01-30 01:45:43.241 +02:00 [DBG] Connection id "0HNA0NQRNO6I8" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 02:02:12.704 +02:00 [INF] Application is shutting down...
+2025-01-30 02:02:12.705 +02:00 [DBG] Hosting stopping
+2025-01-30 02:02:12.713 +02:00 [DBG] Hosting stopped
+2025-01-30 02:02:23.972 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-01-30 02:02:24.095 +02:00 [DBG] Hosting starting
+2025-01-30 02:02:24.110 +02:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-30 02:02:24.127 +02:00 [DBG] Reading data from file 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys\key-6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c.xml'.
+2025-01-30 02:02:24.143 +02:00 [DBG] Found key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c}.
+2025-01-30 02:02:24.155 +02:00 [DBG] Considering key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} with expiration date 2025-04-28 16:45:02Z as default key.
+2025-01-30 02:02:24.162 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-01-30 02:02:24.170 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-01-30 02:02:24.176 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-01-30 02:02:24.188 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-01-30 02:02:24.192 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-01-30 02:02:24.196 +02:00 [DBG] Using key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} as the default key.
+2025-01-30 02:02:24.199 +02:00 [DBG] Key ring with default key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} was loaded during application startup.
+2025-01-30 02:02:24.264 +02:00 [INF] Now listening on: http://localhost:5255
+2025-01-30 02:02:24.267 +02:00 [DBG] Loaded hosting startup assembly WebApiProject
+2025-01-30 02:02:24.270 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-30 02:02:24.271 +02:00 [INF] Hosting environment: Development
+2025-01-30 02:02:24.273 +02:00 [INF] Content root path: C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject-main
+2025-01-30 02:02:24.276 +02:00 [DBG] Hosting started
+2025-01-30 02:02:29.389 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" accepted.
+2025-01-30 02:02:29.395 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" started.
+2025-01-30 02:02:29.396 +02:00 [DBG] Connection id "0HNA0O5HJDPTJ" accepted.
+2025-01-30 02:02:29.404 +02:00 [DBG] Connection id "0HNA0O5HJDPTJ" started.
+2025-01-30 02:02:33.402 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/index.html - null null
+2025-01-30 02:02:33.408 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-01-30 02:02:33.440 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/index.html'
+2025-01-30 02:02:33.452 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/index.html' for the request path '/swagger/index.html'
+2025-01-30 02:02:33.468 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/index.html'
+2025-01-30 02:02:33.473 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 02:02:33.499 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:02:33.575 +02:00 [DBG] /swagger/index.html.GET took 68ms. User: unknown
+2025-01-30 02:02:33.579 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" completed keep alive response.
+2025-01-30 02:02:33.583 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/index.html - 200 null text/html;charset=utf-8 181.6317ms
+2025-01-30 02:02:33.849 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - null null
+2025-01-30 02:02:33.857 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:02:33.859 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/v1/swagger.json' for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:02:33.863 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:02:33.865 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 02:02:33.868 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:02:33.981 +02:00 [DBG] /swagger/v1/swagger.json.GET took 109ms. User: unknown
+2025-01-30 02:02:33.984 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" completed keep alive response.
+2025-01-30 02:02:33.987 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 137.1774ms
+2025-01-30 02:03:37.268 +02:00 [DBG] Connection id "0HNA0O5HJDPTJ" received FIN.
+2025-01-30 02:03:37.275 +02:00 [DBG] Connection id "0HNA0O5HJDPTJ" disconnecting.
+2025-01-30 02:03:37.280 +02:00 [DBG] Connection id "0HNA0O5HJDPTJ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 02:03:37.294 +02:00 [DBG] Connection id "0HNA0O5HJDPTJ" stopped.
+2025-01-30 02:04:04.352 +02:00 [DBG] Connection id "0HNA0O5HJDPTK" accepted.
+2025-01-30 02:04:04.353 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/index.html - null null
+2025-01-30 02:04:04.354 +02:00 [DBG] Connection id "0HNA0O5HJDPTK" started.
+2025-01-30 02:04:04.360 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/index.html'
+2025-01-30 02:04:04.365 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/index.html' for the request path '/swagger/index.html'
+2025-01-30 02:04:04.371 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/index.html'
+2025-01-30 02:04:04.375 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 02:04:04.378 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:04:04.382 +02:00 [DBG] /swagger/index.html.GET took 1ms. User: unknown
+2025-01-30 02:04:04.385 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" completed keep alive response.
+2025-01-30 02:04:04.386 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/index.html - 200 null text/html;charset=utf-8 32.4544ms
+2025-01-30 02:04:04.503 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - null null
+2025-01-30 02:04:04.512 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:04:04.513 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/v1/swagger.json' for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:04:04.518 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:04:04.522 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 02:04:04.525 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:04:04.539 +02:00 [DBG] /swagger/v1/swagger.json.GET took 11ms. User: unknown
+2025-01-30 02:04:04.543 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" completed keep alive response.
+2025-01-30 02:04:04.547 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.5885ms
+2025-01-30 02:04:04.577 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/index.html - null null
+2025-01-30 02:04:04.588 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/index.html'
+2025-01-30 02:04:04.592 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/index.html' for the request path '/swagger/index.html'
+2025-01-30 02:04:04.600 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/index.html'
+2025-01-30 02:04:04.604 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 02:04:04.606 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:04:04.610 +02:00 [DBG] /swagger/index.html.GET took 0ms. User: unknown
+2025-01-30 02:04:04.613 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" completed keep alive response.
+2025-01-30 02:04:04.617 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/index.html - 200 null text/html;charset=utf-8 39.9917ms
+2025-01-30 02:04:04.713 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - null null
+2025-01-30 02:04:04.723 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:04:04.726 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/v1/swagger.json' for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:04:04.733 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:04:04.739 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 02:04:04.741 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:04:04.750 +02:00 [DBG] /swagger/v1/swagger.json.GET took 6ms. User: unknown
+2025-01-30 02:04:04.754 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" completed keep alive response.
+2025-01-30 02:04:04.757 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 43.7789ms
+2025-01-30 02:04:55.897 +02:00 [INF] Application is shutting down...
+2025-01-30 02:04:55.898 +02:00 [DBG] Hosting stopping
+2025-01-30 02:04:55.909 +02:00 [DBG] Connection id "0HNA0O5HJDPTK" disconnecting.
+2025-01-30 02:04:55.909 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" disconnecting.
+2025-01-30 02:04:55.915 +02:00 [DBG] Connection id "0HNA0O5HJDPTK" stopped.
+2025-01-30 02:04:55.919 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" stopped.
+2025-01-30 02:04:55.924 +02:00 [DBG] Connection id "0HNA0O5HJDPTK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 02:04:55.929 +02:00 [DBG] Connection id "0HNA0O5HJDPTI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 02:04:55.950 +02:00 [DBG] Hosting stopped
+2025-01-30 02:05:03.936 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-01-30 02:05:04.129 +02:00 [DBG] Hosting starting
+2025-01-30 02:05:04.147 +02:00 [INF] User profile is available. Using 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-30 02:05:04.169 +02:00 [DBG] Reading data from file 'C:\Users\user1\AppData\Local\ASP.NET\DataProtection-Keys\key-6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c.xml'.
+2025-01-30 02:05:04.184 +02:00 [DBG] Found key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c}.
+2025-01-30 02:05:04.196 +02:00 [DBG] Considering key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} with expiration date 2025-04-28 16:45:02Z as default key.
+2025-01-30 02:05:04.205 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-01-30 02:05:04.213 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-01-30 02:05:04.219 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-01-30 02:05:04.232 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-01-30 02:05:04.237 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-01-30 02:05:04.243 +02:00 [DBG] Using key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} as the default key.
+2025-01-30 02:05:04.249 +02:00 [DBG] Key ring with default key {6c343ce2-c1c3-462e-a3b4-7a56cd0dca1c} was loaded during application startup.
+2025-01-30 02:05:04.312 +02:00 [INF] Now listening on: http://localhost:5255
+2025-01-30 02:05:04.314 +02:00 [DBG] Loaded hosting startup assembly WebApiProject
+2025-01-30 02:05:04.317 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-30 02:05:04.318 +02:00 [INF] Hosting environment: Development
+2025-01-30 02:05:04.320 +02:00 [INF] Content root path: C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject-main
+2025-01-30 02:05:04.322 +02:00 [DBG] Hosting started
+2025-01-30 02:05:07.414 +02:00 [DBG] Connection id "0HNA0O70MFD4R" accepted.
+2025-01-30 02:05:07.419 +02:00 [DBG] Connection id "0HNA0O70MFD4R" started.
+2025-01-30 02:05:07.420 +02:00 [DBG] Connection id "0HNA0O70MFD4S" accepted.
+2025-01-30 02:05:07.425 +02:00 [DBG] Connection id "0HNA0O70MFD4S" started.
+2025-01-30 02:05:10.922 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/index.html - null null
+2025-01-30 02:05:10.937 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-01-30 02:05:10.968 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/index.html'
+2025-01-30 02:05:10.976 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/index.html' for the request path '/swagger/index.html'
+2025-01-30 02:05:10.988 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/index.html'
+2025-01-30 02:05:10.997 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 02:05:11.025 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:05:11.100 +02:00 [DBG] /swagger/index.html.GET took 70ms. User: unknown
+2025-01-30 02:05:11.102 +02:00 [DBG] Connection id "0HNA0O70MFD4R" completed keep alive response.
+2025-01-30 02:05:11.106 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/index.html - 200 null text/html;charset=utf-8 186.0024ms
+2025-01-30 02:05:11.353 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - null null
+2025-01-30 02:05:11.359 +02:00 [DBG] 1 candidate(s) found for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:05:11.360 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'swagger/v1/swagger.json' for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:05:11.363 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/swagger/v1/swagger.json'
+2025-01-30 02:05:11.366 +02:00 [DBG] Request did not match any endpoints
+2025-01-30 02:05:11.368 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:05:11.491 +02:00 [DBG] /swagger/v1/swagger.json.GET took 118ms. User: unknown
+2025-01-30 02:05:11.493 +02:00 [DBG] Connection id "0HNA0O70MFD4R" completed keep alive response.
+2025-01-30 02:05:11.494 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 141.5477ms
+2025-01-30 02:05:36.203 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/Jobs - null null
+2025-01-30 02:05:36.209 +02:00 [DBG] 2 candidate(s) found for the request path '/Jobs'
+2025-01-30 02:05:36.221 +02:00 [DBG] Endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)' with route pattern 'Jobs' is valid for the request path '/Jobs'
+2025-01-30 02:05:36.231 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/Jobs'
+2025-01-30 02:05:36.241 +02:00 [DBG] Request matched endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 02:05:36.257 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:05:36.269 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:05:36.274 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:05:36.284 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-30 02:05:36.294 +02:00 [INF] Executing endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 02:05:36.353 +02:00 [INF] Route matched with {action = "GetAll", controller = "Jobs"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll() on controller WebApiProject.Controllers.JobsController (WebApiProject).
+2025-01-30 02:05:36.365 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-01-30 02:05:36.372 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-01-30 02:05:36.386 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-01-30 02:05:36.395 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-01-30 02:05:36.401 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-01-30 02:05:36.412 +02:00 [DBG] Executing controller factory for controller WebApiProject.Controllers.JobsController (WebApiProject)
+2025-01-30 02:05:36.421 +02:00 [DBG] Executed controller factory for controller WebApiProject.Controllers.JobsController (WebApiProject)
+2025-01-30 02:05:36.464 +02:00 [INF] Executed action WebApiProject.Controllers.JobsController.GetAll (WebApiProject) in 45.0591ms
+2025-01-30 02:05:36.472 +02:00 [INF] Executed endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 02:05:36.479 +02:00 [DBG] /Jobs.GET took 214ms. User: unknown
+2025-01-30 02:05:36.483 +02:00 [DBG] Connection id "0HNA0O70MFD4R" completed keep alive response.
+2025-01-30 02:05:36.490 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/Jobs - 500 null null 286.8584ms
+2025-01-30 02:06:15.727 +02:00 [DBG] Connection id "0HNA0O70MFD4S" received FIN.
+2025-01-30 02:06:15.734 +02:00 [DBG] Connection id "0HNA0O70MFD4S" disconnecting.
+2025-01-30 02:06:15.749 +02:00 [DBG] Connection id "0HNA0O70MFD4S" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 02:06:15.763 +02:00 [DBG] Connection id "0HNA0O70MFD4S" stopped.
+2025-01-30 02:07:17.341 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5255/Login - application/json 68
+2025-01-30 02:07:17.347 +02:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-01-30 02:07:17.350 +02:00 [DBG] Endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)' with route pattern 'Login' is valid for the request path '/Login'
+2025-01-30 02:07:17.363 +02:00 [DBG] Request matched endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:07:17.372 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:07:17.377 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:07:17.382 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:07:17.388 +02:00 [INF] Executing endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:07:17.412 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(WebApiProject.Models.User) on controller WebApiProject.Controllers.LoginController (WebApiProject).
+2025-01-30 02:07:17.424 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-01-30 02:07:17.434 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-01-30 02:07:17.442 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-01-30 02:07:17.453 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-01-30 02:07:17.461 +02:00 [DBG] Execution plan of result filters (in the following order): ["None"]
+2025-01-30 02:07:17.470 +02:00 [DBG] Executing controller factory for controller WebApiProject.Controllers.LoginController (WebApiProject)
+2025-01-30 02:07:17.481 +02:00 [DBG] Executed controller factory for controller WebApiProject.Controllers.LoginController (WebApiProject)
+2025-01-30 02:07:17.501 +02:00 [DBG] Attempting to bind parameter 'User' of type 'WebApiProject.Models.User' ...
+2025-01-30 02:07:17.515 +02:00 [DBG] Attempting to bind parameter 'User' of type 'WebApiProject.Models.User' using the name '' in request data ...
+2025-01-30 02:07:17.525 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-01-30 02:07:17.617 +02:00 [DBG] Connection id "0HNA0O70MFD4R", Request id "0HNA0O70MFD4R:00000004": started reading request body.
+2025-01-30 02:07:17.620 +02:00 [DBG] Connection id "0HNA0O70MFD4R", Request id "0HNA0O70MFD4R:00000004": done reading request body.
+2025-01-30 02:07:17.630 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'WebApiProject.Models.User'
+2025-01-30 02:07:17.633 +02:00 [DBG] Done attempting to bind parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:07:17.637 +02:00 [DBG] Done attempting to bind parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:07:17.641 +02:00 [DBG] Attempting to validate the bound parameter 'User' of type 'WebApiProject.Models.User' ...
+2025-01-30 02:07:17.669 +02:00 [DBG] Done attempting to validate the bound parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:07:17.690 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 401
+2025-01-30 02:07:17.694 +02:00 [INF] Executed action WebApiProject.Controllers.LoginController.Login (WebApiProject) in 223.4851ms
+2025-01-30 02:07:17.699 +02:00 [INF] Executed endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:07:17.706 +02:00 [DBG] /Login.POST took 329ms. User: unknown
+2025-01-30 02:07:17.711 +02:00 [DBG] Connection id "0HNA0O70MFD4R" completed keep alive response.
+2025-01-30 02:07:17.715 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5255/Login - 401 0 null 373.5088ms
+2025-01-30 02:07:19.161 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5255/Login - application/json 68
+2025-01-30 02:07:19.168 +02:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-01-30 02:07:19.171 +02:00 [DBG] Endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)' with route pattern 'Login' is valid for the request path '/Login'
+2025-01-30 02:07:19.176 +02:00 [DBG] Request matched endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:07:19.181 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:07:19.188 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:07:19.192 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:07:19.196 +02:00 [INF] Executing endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:07:19.202 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(WebApiProject.Models.User) on controller WebApiProject.Controllers.LoginController (WebApiProject).
+2025-01-30 02:07:19.208 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-01-30 02:07:19.215 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-01-30 02:07:19.224 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-01-30 02:07:19.232 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-01-30 02:07:19.241 +02:00 [DBG] Execution plan of result filters (in the following order): ["None"]
+2025-01-30 02:07:19.250 +02:00 [DBG] Executing controller factory for controller WebApiProject.Controllers.LoginController (WebApiProject)
+2025-01-30 02:07:19.258 +02:00 [DBG] Executed controller factory for controller WebApiProject.Controllers.LoginController (WebApiProject)
+2025-01-30 02:07:19.265 +02:00 [DBG] Attempting to bind parameter 'User' of type 'WebApiProject.Models.User' ...
+2025-01-30 02:07:19.273 +02:00 [DBG] Attempting to bind parameter 'User' of type 'WebApiProject.Models.User' using the name '' in request data ...
+2025-01-30 02:07:19.279 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-01-30 02:07:19.284 +02:00 [DBG] Connection id "0HNA0O70MFD4R", Request id "0HNA0O70MFD4R:00000005": started reading request body.
+2025-01-30 02:07:19.292 +02:00 [DBG] Connection id "0HNA0O70MFD4R", Request id "0HNA0O70MFD4R:00000005": done reading request body.
+2025-01-30 02:07:19.299 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'WebApiProject.Models.User'
+2025-01-30 02:07:19.304 +02:00 [DBG] Done attempting to bind parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:07:19.310 +02:00 [DBG] Done attempting to bind parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:07:19.318 +02:00 [DBG] Attempting to validate the bound parameter 'User' of type 'WebApiProject.Models.User' ...
+2025-01-30 02:07:19.325 +02:00 [DBG] Done attempting to validate the bound parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:07:19.331 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 401
+2025-01-30 02:07:19.335 +02:00 [INF] Executed action WebApiProject.Controllers.LoginController.Login (WebApiProject) in 84.6009ms
+2025-01-30 02:07:19.340 +02:00 [INF] Executed endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:07:19.345 +02:00 [DBG] /Login.POST took 157ms. User: unknown
+2025-01-30 02:07:19.349 +02:00 [DBG] Connection id "0HNA0O70MFD4R" completed keep alive response.
+2025-01-30 02:07:19.353 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5255/Login - 401 0 null 192.0198ms
+2025-01-30 02:09:29.607 +02:00 [DBG] Connection id "0HNA0O70MFD4R" disconnecting.
+2025-01-30 02:09:29.609 +02:00 [DBG] Connection id "0HNA0O70MFD4R" stopped.
+2025-01-30 02:09:29.612 +02:00 [DBG] Connection id "0HNA0O70MFD4R" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 02:11:14.396 +02:00 [DBG] Connection id "0HNA0O70MFD4T" accepted.
+2025-01-30 02:11:14.399 +02:00 [DBG] Connection id "0HNA0O70MFD4T" started.
+2025-01-30 02:11:14.402 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5255/Login - application/json 74
+2025-01-30 02:11:14.410 +02:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-01-30 02:11:14.418 +02:00 [DBG] Endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)' with route pattern 'Login' is valid for the request path '/Login'
+2025-01-30 02:11:14.429 +02:00 [DBG] Request matched endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:11:14.438 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:11:14.445 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:11:14.448 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:11:14.453 +02:00 [INF] Executing endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:11:14.460 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(WebApiProject.Models.User) on controller WebApiProject.Controllers.LoginController (WebApiProject).
+2025-01-30 02:11:14.471 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-01-30 02:11:14.480 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-01-30 02:11:14.490 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-01-30 02:11:14.498 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-01-30 02:11:14.505 +02:00 [DBG] Execution plan of result filters (in the following order): ["None"]
+2025-01-30 02:11:14.512 +02:00 [DBG] Executing controller factory for controller WebApiProject.Controllers.LoginController (WebApiProject)
+2025-01-30 02:11:14.521 +02:00 [DBG] Executed controller factory for controller WebApiProject.Controllers.LoginController (WebApiProject)
+2025-01-30 02:11:14.530 +02:00 [DBG] Attempting to bind parameter 'User' of type 'WebApiProject.Models.User' ...
+2025-01-30 02:11:14.539 +02:00 [DBG] Attempting to bind parameter 'User' of type 'WebApiProject.Models.User' using the name '' in request data ...
+2025-01-30 02:11:14.545 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-01-30 02:11:14.551 +02:00 [DBG] Connection id "0HNA0O70MFD4T", Request id "0HNA0O70MFD4T:00000001": started reading request body.
+2025-01-30 02:11:14.558 +02:00 [DBG] Connection id "0HNA0O70MFD4T", Request id "0HNA0O70MFD4T:00000001": done reading request body.
+2025-01-30 02:11:14.565 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'WebApiProject.Models.User'
+2025-01-30 02:11:14.570 +02:00 [DBG] Done attempting to bind parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:11:14.575 +02:00 [DBG] Done attempting to bind parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:11:14.582 +02:00 [DBG] Attempting to validate the bound parameter 'User' of type 'WebApiProject.Models.User' ...
+2025-01-30 02:11:14.589 +02:00 [DBG] Done attempting to validate the bound parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 02:11:14.597 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 401
+2025-01-30 02:11:14.601 +02:00 [INF] Executed action WebApiProject.Controllers.LoginController.Login (WebApiProject) in 89.1405ms
+2025-01-30 02:11:14.609 +02:00 [INF] Executed endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 02:11:14.614 +02:00 [DBG] /Login.POST took 169ms. User: unknown
+2025-01-30 02:11:14.619 +02:00 [DBG] Connection id "0HNA0O70MFD4T" completed keep alive response.
+2025-01-30 02:11:14.624 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5255/Login - 401 0 null 222.153ms
+2025-01-30 02:13:01.068 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/Users/GetAllUsers - null null
+2025-01-30 02:13:01.077 +02:00 [DBG] 2 candidate(s) found for the request path '/Users/GetAllUsers'
+2025-01-30 02:13:01.084 +02:00 [DBG] Endpoint 'WebApiProject.Controllers.UsersController.GetAllUsers (WebApiProject)' with route pattern 'Users/GetAllUsers' is valid for the request path '/Users/GetAllUsers'
+2025-01-30 02:13:01.096 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/Users/GetAllUsers'
+2025-01-30 02:13:01.106 +02:00 [DBG] Request matched endpoint 'WebApiProject.Controllers.UsersController.GetAllUsers (WebApiProject)'
+2025-01-30 02:13:01.114 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:13:01.120 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:13:01.126 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:13:01.141 +02:00 [DBG] Policy authentication schemes  did not succeed
+2025-01-30 02:13:01.156 +02:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=role and Claim.Value is one of the following values: (superAdmin)
+2025-01-30 02:13:01.173 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-01-30 02:13:01.180 +02:00 [DBG] /Users/GetAllUsers.GET took 59ms. User: unknown
+2025-01-30 02:13:01.184 +02:00 [DBG] Connection id "0HNA0O70MFD4T" completed keep alive response.
+2025-01-30 02:13:01.188 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/Users/GetAllUsers - 401 0 null 120.1588ms
+2025-01-30 02:13:36.048 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/Jobs - null null
+2025-01-30 02:13:36.054 +02:00 [DBG] 2 candidate(s) found for the request path '/Jobs'
+2025-01-30 02:13:36.066 +02:00 [DBG] Endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)' with route pattern 'Jobs' is valid for the request path '/Jobs'
+2025-01-30 02:13:36.088 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/Jobs'
+2025-01-30 02:13:36.105 +02:00 [DBG] Request matched endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 02:13:36.111 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 02:13:36.118 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:13:36.125 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 02:13:36.130 +02:00 [INF] Executing endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 02:13:36.138 +02:00 [INF] Route matched with {action = "GetAll", controller = "Jobs"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll() on controller WebApiProject.Controllers.JobsController (WebApiProject).
+2025-01-30 02:13:36.152 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-01-30 02:13:36.162 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-01-30 02:13:36.171 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-01-30 02:13:36.182 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-01-30 02:13:36.190 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-01-30 02:13:36.198 +02:00 [DBG] Executing controller factory for controller WebApiProject.Controllers.JobsController (WebApiProject)
+2025-01-30 02:13:36.204 +02:00 [DBG] Executed controller factory for controller WebApiProject.Controllers.JobsController (WebApiProject)
+2025-01-30 02:13:36.210 +02:00 [INF] Executed action WebApiProject.Controllers.JobsController.GetAll (WebApiProject) in 12.6308ms
+2025-01-30 02:13:36.215 +02:00 [INF] Executed endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 02:13:36.223 +02:00 [DBG] /Jobs.GET took 104ms. User: unknown
+2025-01-30 02:13:36.227 +02:00 [DBG] Connection id "0HNA0O70MFD4T" completed keep alive response.
+2025-01-30 02:13:36.231 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/Jobs - 500 null null 182.9468ms
+2025-01-30 02:15:47.003 +02:00 [DBG] Connection id "0HNA0O70MFD4T" disconnecting.
+2025-01-30 02:15:47.007 +02:00 [DBG] Connection id "0HNA0O70MFD4T" stopped.
+2025-01-30 02:15:47.012 +02:00 [DBG] Connection id "0HNA0O70MFD4T" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 15:49:55.216 +02:00 [DBG] Connection id "0HNA0O70MFD4U" accepted.
+2025-01-30 15:49:55.223 +02:00 [DBG] Connection id "0HNA0O70MFD4U" started.
+2025-01-30 15:49:55.233 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5255/Jobs - null null
+2025-01-30 15:49:55.250 +02:00 [DBG] 2 candidate(s) found for the request path '/Jobs'
+2025-01-30 15:49:55.253 +02:00 [DBG] Endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)' with route pattern 'Jobs' is valid for the request path '/Jobs'
+2025-01-30 15:49:55.260 +02:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/Jobs'
+2025-01-30 15:49:55.263 +02:00 [DBG] Request matched endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 15:49:55.266 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 15:49:55.268 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 15:49:55.270 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 15:49:55.271 +02:00 [INF] Executing endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 15:49:55.273 +02:00 [INF] Route matched with {action = "GetAll", controller = "Jobs"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll() on controller WebApiProject.Controllers.JobsController (WebApiProject).
+2025-01-30 15:49:55.279 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-01-30 15:49:55.281 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-01-30 15:49:55.285 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-01-30 15:49:55.290 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-01-30 15:49:55.294 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-01-30 15:49:55.300 +02:00 [DBG] Executing controller factory for controller WebApiProject.Controllers.JobsController (WebApiProject)
+2025-01-30 15:49:55.305 +02:00 [DBG] Executed controller factory for controller WebApiProject.Controllers.JobsController (WebApiProject)
+2025-01-30 15:49:55.310 +02:00 [INF] Executed action WebApiProject.Controllers.JobsController.GetAll (WebApiProject) in 9.4758ms
+2025-01-30 15:49:55.314 +02:00 [INF] Executed endpoint 'WebApiProject.Controllers.JobsController.GetAll (WebApiProject)'
+2025-01-30 15:49:55.317 +02:00 [DBG] /Jobs.GET took 48ms. User: unknown
+2025-01-30 15:49:55.318 +02:00 [DBG] Connection id "0HNA0O70MFD4U" completed keep alive response.
+2025-01-30 15:49:55.322 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5255/Jobs - 500 null null 89.2704ms
+2025-01-30 15:50:41.049 +02:00 [DBG] Connection id "0HNA0O70MFD4U" received FIN.
+2025-01-30 15:50:41.061 +02:00 [DBG] Connection id "0HNA0O70MFD4U" disconnecting.
+2025-01-30 15:50:41.068 +02:00 [DBG] Connection id "0HNA0O70MFD4U" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-01-30 15:50:41.080 +02:00 [DBG] Connection id "0HNA0O70MFD4U" stopped.
+2025-01-30 15:52:03.176 +02:00 [DBG] Connection id "0HNA0O70MFD4V" accepted.
+2025-01-30 15:52:03.180 +02:00 [DBG] Connection id "0HNA0O70MFD4V" started.
+2025-01-30 15:52:03.184 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5255/Login - application/json 72
+2025-01-30 15:52:03.194 +02:00 [DBG] 1 candidate(s) found for the request path '/Login'
+2025-01-30 15:52:03.200 +02:00 [DBG] Endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)' with route pattern 'Login' is valid for the request path '/Login'
+2025-01-30 15:52:03.210 +02:00 [DBG] Request matched endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 15:52:03.218 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-01-30 15:52:03.225 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 15:52:03.230 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-01-30 15:52:03.235 +02:00 [INF] Executing endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 15:52:03.243 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(WebApiProject.Models.User) on controller WebApiProject.Controllers.LoginController (WebApiProject).
+2025-01-30 15:52:03.255 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-01-30 15:52:03.265 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-01-30 15:52:03.274 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-01-30 15:52:03.282 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-01-30 15:52:03.289 +02:00 [DBG] Execution plan of result filters (in the following order): ["None"]
+2025-01-30 15:52:03.298 +02:00 [DBG] Executing controller factory for controller WebApiProject.Controllers.LoginController (WebApiProject)
+2025-01-30 15:52:03.306 +02:00 [DBG] Executed controller factory for controller WebApiProject.Controllers.LoginController (WebApiProject)
+2025-01-30 15:52:03.313 +02:00 [DBG] Attempting to bind parameter 'User' of type 'WebApiProject.Models.User' ...
+2025-01-30 15:52:03.319 +02:00 [DBG] Attempting to bind parameter 'User' of type 'WebApiProject.Models.User' using the name '' in request data ...
+2025-01-30 15:52:03.329 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-01-30 15:52:03.337 +02:00 [DBG] Connection id "0HNA0O70MFD4V", Request id "0HNA0O70MFD4V:00000001": started reading request body.
+2025-01-30 15:52:03.345 +02:00 [DBG] Connection id "0HNA0O70MFD4V", Request id "0HNA0O70MFD4V:00000001": done reading request body.
+2025-01-30 15:52:03.368 +02:00 [DBG] JSON input formatter threw an exception: 'w' is invalid after a value. Expected either ',', '}', or ']'. Path: $ | LineNumber: 1 | BytePositionInLine: 14.
+2025-01-30 15:52:03.374 +02:00 [DBG] Done attempting to bind parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 15:52:03.381 +02:00 [DBG] Done attempting to bind parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 15:52:03.387 +02:00 [DBG] Attempting to validate the bound parameter 'User' of type 'WebApiProject.Models.User' ...
+2025-01-30 15:52:03.399 +02:00 [DBG] Done attempting to validate the bound parameter 'User' of type 'WebApiProject.Models.User'.
+2025-01-30 15:52:03.406 +02:00 [INF] Executed action WebApiProject.Controllers.LoginController.Login (WebApiProject) in 108.182ms
+2025-01-30 15:52:03.412 +02:00 [INF] Executed endpoint 'WebApiProject.Controllers.LoginController.Login (WebApiProject)'
+2025-01-30 15:52:03.415 +02:00 [DBG] /Login.POST took 190ms. User: unknown
+2025-01-30 15:52:03.419 +02:00 [DBG] Connection id "0HNA0O70MFD4V" completed keep alive response.
+2025-01-30 15:52:03.427 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5255/Login - 500 null null 243.3553ms

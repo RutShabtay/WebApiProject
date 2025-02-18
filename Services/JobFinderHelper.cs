@@ -10,8 +10,8 @@ namespace WebApiProject.services
 
         public static void AddJobFinderServices(this IServiceCollection services)
         {
-            services.AddSingleton<IJobFinderService, JobFinderService>();
-
+            services.AddSingleton<IJobFinderService, JobsService>();
+            services.AddSingleton<IUserFinderService, UserService>();
         }
     }
 }

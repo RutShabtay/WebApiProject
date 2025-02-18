@@ -6,14 +6,13 @@ namespace WebApiProject.Interface
 
     public interface IJobFinderService
     {
-        IEnumerable<JobFinderAPI> GetAll();
+        IEnumerable<Job> GetAll();
 
-        JobFinderAPI? Get(int id);
+        Job? Get(int id);
 
-        void Post(JobFinderAPI newJob);
+        IActionResult Post(Job newJob, string CreatedBy);
+        IActionResult Put(Job jobToUpdate);
 
-        void Delete(JobFinderAPI jobToDelete);
-        void Put(JobFinderAPI jobToUpdate, JobFinderAPI newJob);
-
+        IActionResult Delete(Job jobToDelete);
     }
 }

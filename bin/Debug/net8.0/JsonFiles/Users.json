@@ -1,0 +1,17 @@
+[
+    {
+        "userId": "user123",
+        "permission": "Admin",
+        "userName": "Alice"
+    },
+    {
+        "userId": "user456",
+        "permission": "User",
+        "userName": "Bob"
+    },
+    {
+        "userId": "user789",
+        "permission": "SuperAdmin",
+        "userName": "Charlie"
+    }
+]

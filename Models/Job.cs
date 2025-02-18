@@ -1,6 +1,6 @@
-namespace  WebApiProject.Models;
+namespace WebApiProject.Models;
 
-public class JobFinderAPI
+public class Job
 {
     public int JobId { get; set; }
     public string? Location { get; set; }
@@ -8,4 +8,5 @@ public class JobFinderAPI
     public int Sallery { get; set; }
     public string? JobDescription { get; set; }
     public DateTime PostedDate { get; set; }
+    public string CreatedBy { get; set; }
 }

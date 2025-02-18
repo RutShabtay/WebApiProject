@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "mFZmbdhV1DTRdE4YMJtDYAF5nbI5BZNgPZgZeSG9H48=",
+  "Source": "WebApiProject",
+  "BasePath": "_content/WebApiProject",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApiProject\\wwwroot",
+      "Source": "WebApiProject",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
+      "BasePath": "_content/WebApiProject",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\Style.css",
+      "SourceId": "WebApiProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
+      "BasePath": "_content/WebApiProject",
+      "RelativePath": "Css/Style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Css\\Style.css"
+    },
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\index.html",
+      "SourceId": "WebApiProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
+      "BasePath": "_content/WebApiProject",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Js\\app.js",
+      "SourceId": "WebApiProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
+      "BasePath": "_content/WebApiProject",
+      "RelativePath": "Js/app.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Js\\app.js"
+    }
+  ]
+}
