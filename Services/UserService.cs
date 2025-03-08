@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WebApiProject.Interface;
@@ -10,7 +11,7 @@ namespace WebApiProject.services
 
     public class UserService : IUserFinderService
     {
-        private readonly string jsonFilePath = "./JsonFile/Users.json";
+        private readonly string jsonFilePath = "./JsonFiles/Users.json";
 
         public IEnumerable<User> GetAllUsers()
         {
@@ -18,50 +19,64 @@ namespace WebApiProject.services
             return objectList.Cast<User>();
         }
 
-        public User Get(string userId)
+        public User Get(string password)
         {
             var users = GeneralService.ReadFromJsonFile(jsonFilePath, "user").Cast<User>().ToList();
-            var currentUser = users.Find(c => c.userId == userId);
+            var currentUser = users.FirstOrDefault(c => c.password == password);
             return currentUser;
         }
 
 
         public ActionResult post(User newUser)
         {
-            var claims = new List<Claim>
-            {
-                new Claim("role", "GeneralUser"),
-                new Claim("permission", newUser.permission.ToString()),
-                new Claim("userId",newUser.userId.ToString())
-            };
+            // var claims = new List<Claim>
+            // {
+            //     new Claim("type", "GeneralUser"),
+            //     new Claim("permission", newUser.permission.ToString()),
+            //     new Claim("password",newUser.password.ToString())
+            // };
 
-            var token = JobFinderTokenService.GetToken(claims);
-            GeneralService.WriteToJsonFile(jsonFilePath, newUser);
-            return new OkObjectResult(JobFinderTokenService.WriteToken(token));
+            // var token = JobFinderTokenService.GetToken(claims);
+            GeneralService.WriteToJsonFile(jsonFilePath, newUser, "user");
+            return new OkObjectResult("User added successfully");
+            // return new OkObjectResult(JobFinderTokenService.WriteToken(token));
         }
 
-        public ActionResult Put(User userToUpdate)
+        public ActionResult Put(User userToUpdate, string password)
         {
-            var deleteResult = Delete(userToUpdate.userId);
+            var deleteResult = Delete(password);
             if (deleteResult is ObjectResult objectResult && objectResult.StatusCode == 400)
             {
-                return new ObjectResult("User ID not found.") { StatusCode = 400 };
+                return new ObjectResult("User Password not found.") { StatusCode = 400 };
             }
 
-            return GeneralService.WriteToJsonFile(jsonFilePath, userToUpdate);
+            return GeneralService.WriteToJsonFile(jsonFilePath, userToUpdate, "user");
         }
 
-        public IActionResult Delete(string userId)
+        public IActionResult Delete(string password)
         {
             var users = GeneralService.ReadFromJsonFile(jsonFilePath, "user").Cast<User>().ToList();
-            var userToDelete = users.Find(u => u.userId == userId);
+            var userToDelete = users.Find(u => u.password == password);
             if (userToDelete == null)
                 return new ObjectResult("User ID not found in token") { StatusCode = 400 };
             users.Remove(userToDelete);
             var userJson = JsonConvert.SerializeObject(users, Formatting.Indented);
             File.WriteAllText(jsonFilePath, userJson);
-            return new ObjectResult("User added successfully") { StatusCode = 201 };
+            return new ObjectResult("User Deleted successfully") { StatusCode = 201 };
         }
 
+        public object GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
+
+    public static class UsersServiceHelper
+    {
+        public static void AddUserService(this IServiceCollection services)
+        {
+            services.AddSingleton<IUserFinderService, UserService>();
+        }
+    }
+
 }

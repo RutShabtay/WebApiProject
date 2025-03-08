@@ -6,6 +6,8 @@ using WebApiProject.Services;
 
 namespace WebApiProject.Controllers
 {
+
+
     [ApiController]
     [Route("[controller]")]
     public class JobsController : ControllerBase
@@ -40,26 +42,30 @@ namespace WebApiProject.Controllers
         }
 
         [HttpPost]
-        [Authorize(Policy = "Management")]
+        [Authorize(Policy = "Admin")]
         public ActionResult Post(Job newJob)
         {
-            //The Id of the adding user
-            var CreatedBy = GeneralService.GetUserIdFromToken(HttpContext).ToString();
+            ObjectResult passwordObj = (ObjectResult)GeneralService.GetUserPasswordFromToken(HttpContext);
+            var CreatedBy = passwordObj.Value as string;
             JobFinderService.Post(newJob, CreatedBy);
             return CreatedAtAction(nameof(Post), new { newJobId = newJob.JobId }, newJob);
         }
 
-        [HttpPut]
-        [Authorize(Policy = "Management")]
 
-        public IActionResult Put(int jobId, Job newJob)
+        [HttpPut("{id}")]
+        [Authorize(Policy = "Admin")]
+        public IActionResult Put(int id, Job newJob)
         {
-            var role = GeneralService.GetUserRoleFromToken(HttpContext).ToString;
-            if (role.Equals("superAdmin") || (role.Equals("Admin") && JobFinderService.Get(jobId).CreatedBy.Equals(GeneralService.GetUserIdFromToken(HttpContext).ToString())))
+            ObjectResult type1 = (ObjectResult)GeneralService.GetUserTypeFromToken(HttpContext);
+            var type = type1.Value as string;
+            ObjectResult password1 = (ObjectResult)GeneralService.GetUserPasswordFromToken(HttpContext);
+            var password = password1.Value as String;
+            Console.WriteLine(type);
+            if (type.Equals("SuperAdmin") || (type.Equals("Admin") && JobFinderService.Get(id).CreatedBy.Equals(password)))
             {
-                if (jobId != newJob.JobId)
+                if (newJob == null || id != newJob.JobId)
                     return BadRequest("Not Valid Id---");
-                var jobToUpdate = JobFinderService.Get(jobId);
+                var jobToUpdate = JobFinderService.Get(id);
                 if (jobToUpdate == null)
                     return BadRequest("Oooops,Invalid JobId---");
                 return JobFinderService.Put(newJob);
@@ -68,13 +74,17 @@ namespace WebApiProject.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Policy = "Management")]
-        public IActionResult Delete(int jobId)
+        [Authorize(Policy = "Admin")]
+        public IActionResult Delete(int id)
         {
-            var role = GeneralService.GetUserRoleFromToken(HttpContext).ToString();
-            if (role.Equals("superAdmin") || (role.Equals("Admin") && JobFinderService.Get(jobId).CreatedBy.Equals(GeneralService.GetUserIdFromToken(HttpContext).ToString())))
+            ObjectResult role = (ObjectResult)GeneralService.GetUserTypeFromToken(HttpContext);
+            var type = role.Value as string;
+            ObjectResult passObj = (ObjectResult)GeneralService.GetUserPasswordFromToken(HttpContext);
+            var password = passObj.Value as string;
+
+            if (type.Equals("SuperAdmin") || (type.Equals("Admin") && JobFinderService.Get(id).CreatedBy.Equals(password)))
             {
-                var jobToDelete = JobFinderService.Get(jobId);
+                var jobToDelete = JobFinderService.Get(id);
                 if (jobToDelete == null)
                     return BadRequest("Oooops, Invalid jobId---");
 

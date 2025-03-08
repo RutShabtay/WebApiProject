@@ -1,17 +1,17 @@
 [
-    {
-        "userId": "user123",
-        "permission": "Admin",
-        "userName": "Alice"
-    },
-    {
-        "userId": "user456",
-        "permission": "User",
-        "userName": "Bob"
-    },
-    {
-        "userId": "user789",
-        "permission": "SuperAdmin",
-        "userName": "Charlie"
-    }
+  {
+    "password": "RSS",
+    "permission": "SuperAdmin",
+    "userName": "RUTHI"
+  },
+  {
+    "password": "ML!!!",
+    "permission": "string",
+    "userName": "string"
+  },
+  {
+    "password": "user789--",
+    "permission": "Admin",
+    "userName": "Charlie"
+  }
 ]

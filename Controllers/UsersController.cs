@@ -25,6 +25,7 @@ public class UsersController : ControllerBase
     public IActionResult GetAllUsers()
     {
         var users = userFinderSrvice.GetAllUsers();
+        Console.WriteLine(users);
         if (users != null)
             return Ok(users);
         return StatusCode(500, "Data reading failed while retrieving users.");
@@ -33,8 +34,9 @@ public class UsersController : ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
-        var userId = GeneralService.GetUserIdFromToken(HttpContext).ToString();
-        var currentUser = userFinderSrvice.Get(userId);
+        ObjectResult passObj = (ObjectResult)GeneralService.GetUserPasswordFromToken(HttpContext);
+        var password = passObj.Value as string;
+        var currentUser = userFinderSrvice.Get(password);
         if (currentUser == null)
             return StatusCode(500, "Data reading failed while retrieving users.");
         return Ok(currentUser);
@@ -47,27 +49,32 @@ public class UsersController : ControllerBase
         return userFinderSrvice.post(newUser);
     }
 
-    [HttpPut]
-    public IActionResult Put(User userToUpdate)
+    [HttpPut("{password}")]
+    public IActionResult Put(User userToUpdate, string password)
     {
-        var role = GeneralService.GetUserRoleFromToken(HttpContext).ToString();
-        if (role.Equals("superAdmin") || GeneralService.GetUserIdFromToken(HttpContext).ToString().Equals(userToUpdate.userId))
+        ObjectResult typeObj = (ObjectResult)GeneralService.GetUserTypeFromToken(HttpContext);
+        var type = typeObj.Value as string;
+        ObjectResult passObj = (ObjectResult)GeneralService.GetUserPasswordFromToken(HttpContext);
+        var currentPassword = passObj.Value as string;
+        if (type.Equals("SuperAdmin") || currentPassword.Equals(password))
         {
-            return userFinderSrvice.Put(userToUpdate);
+            return userFinderSrvice.Put(userToUpdate, password);
         }
-        return Forbid("You do not have permission to modify this job.");
+        return Forbid("You do not have permission to modify this user.");
     }
 
 
-    [HttpDelete]
-    public IActionResult Delete(string userId)
+    [HttpDelete("{password}")]
+    public IActionResult Delete(string password)
     {
-        var role = GeneralService.GetUserRoleFromToken(HttpContext).ToString();
-        if (role.Equals("superAdmin") || GeneralService.GetUserIdFromToken(HttpContext).ToString().Equals(userId))
+        ObjectResult typeObj = (ObjectResult)GeneralService.GetUserTypeFromToken(HttpContext);
+        var type = typeObj.Value as string;
+        ObjectResult passObj = (ObjectResult)GeneralService.GetUserPasswordFromToken(HttpContext);
+        var uPassword = passObj.Value as string;
+        if (type.Equals("SuperAdmin") || uPassword.Equals(password))
         {
-            return userFinderSrvice.Delete(userId);
+            return userFinderSrvice.Delete(password);
         }
         return Forbid("You do not have permission to modify this job.");
     }
-
 }

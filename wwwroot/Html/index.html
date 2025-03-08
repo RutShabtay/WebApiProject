@@ -5,27 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobFinderApi</title>
-    <link rel="stylesheet" href="./Css/Style.css">
+    <link rel="stylesheet" href="../Css/Style.css">
 </head>
 
 <body>
     <h1>Job Finder CRUD</h1>
-    <h3>Add</h3>
-    <form action="javascript:void(0);" onsubmit="addItem()">
-        <input type="text" id="Location" placeholder="Job Location"><br>
-        <input type="text" id="JobFieldCategory" placeholder="Job Field Category"><br>
-        <input type="number" id="Sallery" placeholder="sallery"><br>
-        <textarea id="JobDescription" rows="5" cols="40" placeholder="Job Description"></textarea><br>
-        <input type="datetime" id="PostedDate" placeholder="Posted Date"><br>
-        <input type="submit" value="Add">
+    <a href="../Html/login.html">LOGIN</a>
+    <a href="../Html/User.html" id="userLink">USERS</a>
+    <button onclick="logOut()" id="logOut">LOGOUT</button>
 
-    </form>
+    <div id="AddForm">
+        <h3>Add</h3>
+        <form action="javascript:void(0);" onsubmit="addItem()">
+            <input type="text" id="Location" placeholder="Job Location"><br>
+            <input type="text" id="JobFieldCategory" placeholder="Job Field Category"><br>
+            <input type="number" id="Sallery" placeholder="sallery"><br>
+            <textarea id="JobDescription" rows="5" cols="40" placeholder="Job Description"></textarea><br>
+            <input type="datetime" id="PostedDate" placeholder="Posted Date"><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
 
     <div id="editForm">
         <h3>Edit</h3>
         <form action="javascript:void(0);" onsubmit="editItems()">
-            <input type="hidden" id="edit-id">
-            <input type="text" id="edit-location" placeholder="Job Location"><br>
+            <input type="hidden" id="edit-Id">
+            <input type="text" id="edit-Location" placeholder="Job Location"><br>
             <input type="text" id="edit-JobFieldCategory" placeholder="Job Field Category"><br>
             <input type="number" id="edit-Sallery" placeholder="Sallery"><br>
             <textarea id="edit-JobDescription" rows="5" cols="40" placeholder="Job Description"></textarea><br>
@@ -50,9 +55,10 @@
         <tbody id="Jobs"></tbody>
     </table>
 
-    <script src="Js/app.js" asp-append-version="true"></script>
+    <script src="../Js/app.js" asp-append-version="true"></script>
+    <script src="../Js/Login.js" asp-append-version="true"></script>
     <script>
-        getItems();
+        getJobs();
     </script>
 
 </body>

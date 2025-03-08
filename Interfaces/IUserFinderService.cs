@@ -10,8 +10,9 @@ namespace WebApiProject.Interface
         public IEnumerable<User> GetAllUsers();
         User Get(string userId);
         ActionResult post(User newUser);
-        ActionResult Put(User userToUpdate);
+        ActionResult Put(User userToUpdate,string password);
         IActionResult Delete(string userId);
+        object GetAll();
     }
 }
 

@@ -1,34 +1,50 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using WebApiProject.Interface;
 using WebApiProject.Models;
 using WebApiProject.Services;
 
 namespace WebApiProject.Controllers
 {
-
     public class LoginController : ControllerBase
     {
+
+        private ITokenService tokenService;
+        public LoginController(ITokenService tokenService)
+        {
+            this.tokenService = tokenService;
+        }
+
+        private readonly string jsonFilePath = "./JsonFiles/Users.json";
+
         [HttpPost]
         [Route("[action]")]
+
         public ActionResult<String> Login([FromBody] User User)
         {
-            var dt = DateTime.Now;
+            var claims = new List<Claim>();
+            var users = GeneralService.ReadFromJsonFile(jsonFilePath, "user").Cast<User>().ToList();
+            var currentUser = users.Find(c => c.password == User.password);
+            // if ((User.userName == "Malki" && User.password == "ML")
+            //     || (User.userName == "Ruti" && User.password == "RS"))
+            // {
+            //     claims.Add(new Claim("type", "SuperAdmin"));
+            // }
 
-            if (User.userName != "Wray"
-            || User.userId != $"W{dt.Year}#{dt.Day}!")
+            if (currentUser == null || !currentUser.userName.Equals(User.userName))
             {
                 return Unauthorized();
             }
-
-            var claims = new List<Claim>
+            else
             {
-                new Claim("role", "superAdmin"),
-                new Claim("userId",$"W{dt.Year}#{dt.Day}!")
-            };
+                claims.Add(new Claim("type", currentUser.permission));
 
-            var token = JobFinderTokenService.GetToken(claims);
+            }
 
-            return new OkObjectResult(JobFinderTokenService.WriteToken(token));
+            claims.Add(new Claim("password", User.password));
+            claims.Add(new Claim("userName", User.userName));
+            var token = tokenService.GetToken(claims);
+            return new OkObjectResult(tokenService.WriteToken(token));
         }
     }
 }

@@ -2,15 +2,16 @@ using System.Security.Claims;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using WebApiProject.Interface;
 
 
 namespace WebApiProject.Services
 {
-    public static class JobFinderTokenService
+    public class TokenService : ITokenService
     {
         private static SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
         private static string issuer = "https://job-finder-demo.com";
-        public static SecurityToken GetToken(List<Claim> claims) =>
+        public SecurityToken GetToken(List<Claim> claims) =>
             new JwtSecurityToken(
                 issuer,
                 issuer,
@@ -19,7 +20,7 @@ namespace WebApiProject.Services
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
             );
 
-        public static TokenValidationParameters GetTokenValidationParameters() =>
+        public TokenValidationParameters GetTokenValidationParameters() =>
             new TokenValidationParameters
             {
                 ValidIssuer = issuer,
@@ -28,7 +29,16 @@ namespace WebApiProject.Services
                 ClockSkew = TimeSpan.Zero // remove delay of token when expire
             };
 
-        public static string WriteToken(SecurityToken token) =>
+        public string WriteToken(SecurityToken token) =>
             new JwtSecurityTokenHandler().WriteToken(token);
     }
+
+    public static class TokenServiceHelper
+    {
+        public static void AddTokenService(this IServiceCollection services)
+        {
+            services.AddSingleton<ITokenService, TokenService>();
+        }
+    }
+
 }

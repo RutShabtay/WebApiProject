@@ -1,6 +1,7 @@
 
 using WebApiProject.Interface;
 using Microsoft.Extensions.DependencyInjection;
+using WebApiProject.Services;
 
 namespace WebApiProject.services
 
@@ -12,6 +13,8 @@ namespace WebApiProject.services
         {
             services.AddSingleton<IJobFinderService, JobsService>();
             services.AddSingleton<IUserFinderService, UserService>();
+            services.AddSingleton<ITokenService, TokenService>();
+
         }
     }
 }

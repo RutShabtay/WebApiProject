@@ -15,7 +15,7 @@ namespace WebApiProject.services
     public class JobsService : IJobFinderService
     {
 
-        private readonly string jsonFilePath = "./JsonFile/Jobs.json";
+        private readonly string jsonFilePath = "./JsonFiles/Jobs.json";
 
         public IEnumerable<Job> GetAll()
         {
@@ -31,37 +31,53 @@ namespace WebApiProject.services
 
         public IActionResult Post(Job newJob, string CreatedBy)
         {
+
             newJob.CreatedBy = CreatedBy;
-            var nextId = GeneralService.ReadFromJsonFile(jsonFilePath, "job").Cast<Job>().Max(n => n.JobId);
+            var jobs = GeneralService.ReadFromJsonFile(jsonFilePath, "job").Cast<Job>().ToList();
+            var nextId = jobs.Max(n => n.JobId);
             newJob.JobId = nextId + 1;
-            var WriteToJsonFileResult = GeneralService.WriteToJsonFile(jsonFilePath, newJob);
+            var WriteToJsonFileResult = GeneralService.WriteToJsonFile(jsonFilePath, newJob, "job");
+
             if (WriteToJsonFileResult is ObjectResult objectResult && objectResult.StatusCode == 404)
             {
+
                 return new ObjectResult("File was not found.") { StatusCode = 404 };
             }
+
             return new OkObjectResult("The job was added successfully.");
         }
 
         public IActionResult Put(Job jobToUpdate)
         {
-
             var deleteResult = Delete(jobToUpdate);
             if (deleteResult is ObjectResult objectResult && objectResult.StatusCode == 400)
             {
                 return new ObjectResult("Job ID not found.") { StatusCode = 400 };
             }
-
-            return GeneralService.WriteToJsonFile(jsonFilePath, jobToUpdate);
+            return GeneralService.WriteToJsonFile(jsonFilePath, jobToUpdate, "job");
         }
 
         public IActionResult Delete(Job jobToDelete)
         {
             var jobs = GeneralService.ReadFromJsonFile(jsonFilePath, "job").Cast<Job>().ToList();
-            jobs.Remove(jobToDelete);
+            bool isRemoved = jobs.Remove(jobs.FirstOrDefault(j => j.JobId == jobToDelete.JobId));
+            if (!isRemoved)
+            {
+                return new ObjectResult("Job ID not found.") { StatusCode = 400 };
+            }
             var jobsJson = JsonConvert.SerializeObject(jobs, Formatting.Indented);
             File.WriteAllText(jsonFilePath, jobsJson);
             return new ObjectResult("Jobs deleted successfully.") { StatusCode = 201 };
         }
 
     }
+
+    public static class JobsServiceHelper
+    {
+        public static void AddJobService(this IServiceCollection services)
+        {
+            services.AddSingleton<IJobFinderService, JobsService>();
+        }
+    }
+
 }
