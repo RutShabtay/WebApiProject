@@ -55,6 +55,7 @@ namespace WebApiProject.services
 
         public IActionResult Delete(string password)
         {
+            
             var users = GeneralService.ReadFromJsonFile(jsonFilePath, "user").Cast<User>().ToList();
             var userToDelete = users.Find(u => u.password == password);
             if (userToDelete == null)

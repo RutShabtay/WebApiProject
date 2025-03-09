@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "WebApiProject/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Google": "7.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.4",
           "Microsoft.IdentityModel.Tokens": "6.9.0",
           "Newtonsoft.Json": "13.0.3",
@@ -17,6 +18,14 @@
         },
         "runtime": {
           "WebApiProject.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/7.0.0": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51819"
+          }
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.4": {
@@ -465,6 +474,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Authentication.Google/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5gAaVbwSZ0T68adSu7hcPwfThqSjujFYRiNpi1XkGxhz26rLp/66QO93dSB9zlWTSmOJZWJUdIES9YSLR/cc8A==",
+      "path": "microsoft.aspnetcore.authentication.google/7.0.0",
+      "hashPath": "microsoft.aspnetcore.authentication.google.7.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.4": {
       "type": "package",

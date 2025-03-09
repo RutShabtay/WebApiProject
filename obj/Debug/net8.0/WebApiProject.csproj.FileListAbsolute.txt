@@ -137,3 +137,4 @@ C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject\obj\Debug\net8.0
 C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject\obj\Debug\net8.0\WebApiProject.pdb
 C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject\obj\Debug\net8.0\WebApiProject.genruntimeconfig.cache
 C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject\obj\Debug\net8.0\ref\WebApiProject.dll
+C:\Users\user1\Desktop\'תכנות שנה ב\Core\WebApiProject\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

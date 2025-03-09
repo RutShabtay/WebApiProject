@@ -14,7 +14,6 @@ namespace WebApiProject.services
             services.AddSingleton<IJobFinderService, JobsService>();
             services.AddSingleton<IUserFinderService, UserService>();
             services.AddSingleton<ITokenService, TokenService>();
-
         }
     }
 }

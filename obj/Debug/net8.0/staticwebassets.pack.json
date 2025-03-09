@@ -1,28 +1,32 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\Login.css",
-      "PackagePath": "staticwebassets\\Css\\Login.css"
+      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\Jobs.css",
+      "PackagePath": "staticwebassets\\Css\\Jobs.css"
     },
     {
-      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\Style.css",
-      "PackagePath": "staticwebassets\\Css\\Style.css"
+      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\Login.css",
+      "PackagePath": "staticwebassets\\Css\\Login.css"
     },
     {
       "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\User.css",
       "PackagePath": "staticwebassets\\Css\\User.css"
     },
     {
-      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\User.html",
-      "PackagePath": "staticwebassets\\Html\\User.html"
+      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\Jobs.html",
+      "PackagePath": "staticwebassets\\Html\\Jobs.html"
     },
     {
-      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\index.html",
-      "PackagePath": "staticwebassets\\Html\\index.html"
+      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\Users.html",
+      "PackagePath": "staticwebassets\\Html\\Users.html"
     },
     {
       "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\login.html",
       "PackagePath": "staticwebassets\\Html\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Js\\Jobs.js",
+      "PackagePath": "staticwebassets\\Js\\Jobs.js"
     },
     {
       "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Js\\Login.js",
@@ -31,10 +35,6 @@
     {
       "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Js\\User.js",
       "PackagePath": "staticwebassets\\Js\\User.js"
-    },
-    {
-      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Js\\app.js",
-      "PackagePath": "staticwebassets\\Js\\app.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApiProject.Microsoft.AspNetCore.StaticWebAssets.props",

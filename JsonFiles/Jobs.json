@@ -1,28 +1,19 @@
 [
   {
-    "JobId": 38,
+    "JobId": 43,
+    "Location": "k77",
+    "JobFieldCategory": "2",
+    "Sallery": 1,
+    "JobDescription": "22",
+    "PostedDate": "2025-01-07T22:11:56.604Z",
+    "CreatedBy": "RSS"
+  },
+  {
+    "JobId": 44,
     "Location": "k",
     "JobFieldCategory": "2",
     "Sallery": 1,
-    "JobDescription": "11",
-    "PostedDate": "2025-01-07T22:11:56.604Z",
-    "CreatedBy": "RSS"
-  },
-  {
-    "JobId": 40,
-    "Location": "qwert",
-    "JobFieldCategory": "2",
-    "Sallery": 1,
-    "JobDescription": "111",
-    "PostedDate": "2025-01-07T22:11:56.604Z",
-    "CreatedBy": "RSS"
-  },
-  {
-    "JobId": 41,
-    "Location": "rrr",
-    "JobFieldCategory": "r",
-    "Sallery": 1,
-    "JobDescription": "rrr",
+    "JobDescription": "2",
     "PostedDate": "2025-01-07T22:11:56.604Z",
     "CreatedBy": "RSS"
   }

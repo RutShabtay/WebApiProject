@@ -1,66 +1,54 @@
-const url = '/Jobs';
+const jobsUrl = '/Jobs';
 
 let jobsArr = [];
 let currentPermission = null;
 let currentPassword = null;
+let userName = null;
 
-let token = localStorage.getItem("Token");
-if (token == null) {
-    document.getElementById('logOut').style.display = "none";
-    document.getElementById('userLink').style.display = "none";
+const onLoad = () => {
+    let token = localStorage.getItem("Token");
+    if (token == null) {
+        document.getElementById('logOut').style.display = "none";
+        document.getElementById('userLink').style.display = "none";
+    }
+
+    else {
+        const payload = token.split('.')[1];
+        const decodedPayload = JSON.parse(atob(payload));
+        currentPermission = decodedPayload.type;
+        currentPassword = decodedPayload.password;
+        userName = decodedPayload.userName;
+    }
+    if (currentPermission === "user" || currentPermission == null)
+        document.getElementById("AddForm").style.display = "none";
+    else
+        document.getElementById("AddForm").style.display = "block";
+
+
 }
 
-else {
-    const payload = token.split('.')[1];
-    const decodedPayload = JSON.parse(atob(payload));
-    currentPermission = decodedPayload.type;
-    currentPassword = decodedPayload.password;
-}
-if (currentPermission === "user" || currentPermission == null)
-    document.getElementById("AddForm").style.display = "none";
-else
-    document.getElementById("AddForm").style.display = "block";
-// (function () {
+document.addEventListener("DOMContentLoaded", function () {
+    onLoad();
+});
 
-
-// })();
-
-// document.addEventListener("DOMContentLoaded", function () {
-
-//     let token = localStorage.getItem("Token");
-//     if (token == null) {
-//         document.getElementById('logOut').style.display = "none";
-//         document.getElementById('userLink').style.display = "none";
-//     }
-
-//     else {
-//         const payload = token.split('.')[1];
-//         const decodedPayload = JSON.parse(atob(payload));
-//         currentPermission = decodedPayload.type;
-//         currentPassword = decodedPayload.password;
-//     }
-
-//     if (currentPermission !== "SuperAdmin")
-//         document.getElementById("AddForm").style.display = "none";
-//     else
-//         document.getElementById("AddForm").style.display = "block";
-// })
 
 
 const getJobs = () => {
 
-    fetch(url).then(Response => Response.json())
-        .then(data => displayItems(data))
+    fetch(jobsUrl).then(Response => Response.json())
+        .then(data => displayJobs(data))
         .catch(error => console.error('Unable to get items.', error))
-
+    onLoad();
+    if (userName != null)
+        document.getElementById("hi").innerHTML = "Hi, " + userName;
 }
 
 const updateCounter = (itemCount) => {
     let counter = document.getElementById("counter");
-    counter.innerHTML = itemCount;
+    counter.innerHTML = "There are " + itemCount + " jobs waiting especially for you";
 }
 
-const addItem = () => {
+const addJob = () => {
 
     const newJob = {
         "location": document.getElementById('Location').value.trim() === "" || document.getElementById('Location').value.trim() === undefined ? null : document.getElementById('Location').value.trim(),
@@ -69,9 +57,9 @@ const addItem = () => {
         "jobDescription": document.getElementById('JobDescription').value.trim() === "" || document.getElementById('JobDescription').value.trim() === undefined ? null : document.getElementById('JobDescription').value.trim(),
         "postedDate": document.getElementById('PostedDate').value.trim() === "" || document.getElementById('PostedDate').value.trim() === undefined ? null : document.getElementById('PostedDate').value.trim(),
         "CreatedBy": "Microsoft.AspNetCore.Mvc.ObjectResult"
-
     };
-    fetch(url, {
+
+    fetch(jobsUrl, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem("Token")}`,
@@ -86,31 +74,38 @@ const addItem = () => {
             }
             return response.json();
         })
-
         .then(() => {
             getJobs();
+            alert("The system has updated your job. Hoping for a quick resolution.")
             document.getElementById('Location').value = '',
                 document.getElementById('JobFieldCategory').value = '',
                 document.getElementById('Sallery').value = '',
                 document.getElementById('JobDescription').value = '',
                 document.getElementById('PostedDate').value = ''
         })
-        .catch(error => console.error('Unable to add item.', error));
+        .catch(error => {
+            console.error('Unable to add item.', error);
+            alert("A system error occurred while attempting to add a job. Contact our customer service at 054-8541650")
+        });
 }
 
-const deleteItem = (id) => {
-    fetch(`${url}/${id}`, {
+const deleteJob = (id) => {
+    fetch(`${jobsUrl}/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem("Token")}`,
             'Accept': 'application/json'
         },
     })
-        .then(() => getJobs())
+        .then(() => {
+            getJobs();
+            alert("The system has deleted your job. We are happy to have found the employee.")
+
+        })
         .catch(error => console.error('Unable to delete item.', error));
 }
 
-const displayItems = (jobsJson) => {
+const displayJobs = (jobsJson) => {
 
     const tBody = document.getElementById("Jobs");
     tBody.innerHTML = '';
@@ -145,10 +140,10 @@ const displayItems = (jobsJson) => {
         let postedDate = document.createTextNode(element.postedDate);
         td5.appendChild(postedDate);
 
-        //calling to deleteItem func
+        //calling to deleteJob func
         let deleteButton = button.cloneNode(false);
         deleteButton.innerText = 'Delete';
-        deleteButton.setAttribute('onclick', `deleteItem(${element.jobId})`)
+        deleteButton.setAttribute('onclick', `deleteJob(${element.jobId})`)
         if (currentPermission === "SuperAdmin" || (currentPermission === "Admin" && element.createdBy === currentPassword)) {
 
             let td6 = tr.insertCell(5);
@@ -162,7 +157,6 @@ const displayItems = (jobsJson) => {
     });
     jobsArr = jobsJson;
 }
-
 
 const displayEditForm = (id) => {
     var jobToEdit;
@@ -182,7 +176,7 @@ const displayEditForm = (id) => {
 
 }
 
-const editItems = () => {
+const editJobs = () => {
 
     var itemId = document.getElementById('edit-Id').value;
     const item = {
@@ -195,7 +189,7 @@ const editItems = () => {
 
         CreatedBy: jobsArr.find((element) => element.jobId == itemId).createdBy
     };
-    fetch(`${url}/${itemId}`, {
+    fetch(`${jobsUrl}/${itemId}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
@@ -219,7 +213,7 @@ const closeInput = () => {
 
 const logOut = () => {
     localStorage.removeItem("Token");
-    location.href = "index.html";
+    location.href = "Jobs.html";
 }
 
 

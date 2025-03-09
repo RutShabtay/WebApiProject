@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K7uJNWw4bXvQd/ThpZEANUc5paXZNj3u+wlCib5My4o=",
+  "Hash": "FsxTowbFXGpZ2bcd2qIw/qNAch9QLWGhZt0qUvVJqkY=",
   "Source": "WebApiProject",
   "BasePath": "_content/WebApiProject",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\Jobs.css",
+      "SourceId": "WebApiProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
+      "BasePath": "_content/WebApiProject",
+      "RelativePath": "Css/Jobs.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Css\\Jobs.css"
+    },
     {
       "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\Login.css",
       "SourceId": "WebApiProject",
@@ -34,25 +53,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Css\\Login.css"
-    },
-    {
-      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\Style.css",
-      "SourceId": "WebApiProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
-      "BasePath": "_content/WebApiProject",
-      "RelativePath": "Css/Style.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Css\\Style.css"
     },
     {
       "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Css\\User.css",
@@ -74,12 +74,12 @@
       "OriginalItemSpec": "wwwroot\\Css\\User.css"
     },
     {
-      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\index.html",
+      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\Jobs.html",
       "SourceId": "WebApiProject",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
       "BasePath": "_content/WebApiProject",
-      "RelativePath": "Html/index.html",
+      "RelativePath": "Html/Jobs.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -90,7 +90,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Html\\index.html"
+      "OriginalItemSpec": "wwwroot\\Html\\Jobs.html"
     },
     {
       "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\login.html",
@@ -112,12 +112,12 @@
       "OriginalItemSpec": "wwwroot\\Html\\login.html"
     },
     {
-      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\User.html",
+      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Html\\Users.html",
       "SourceId": "WebApiProject",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
       "BasePath": "_content/WebApiProject",
-      "RelativePath": "Html/User.html",
+      "RelativePath": "Html/Users.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -128,15 +128,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Html\\User.html"
+      "OriginalItemSpec": "wwwroot\\Html\\Users.html"
     },
     {
-      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Js\\app.js",
+      "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Js\\Jobs.js",
       "SourceId": "WebApiProject",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\",
       "BasePath": "_content/WebApiProject",
-      "RelativePath": "Js/app.js",
+      "RelativePath": "Js/Jobs.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,7 +147,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Js\\app.js"
+      "OriginalItemSpec": "wwwroot\\Js\\Jobs.js"
     },
     {
       "Identity": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\Js\\Login.js",

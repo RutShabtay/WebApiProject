@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobFinderApi</title>
-    <link rel="stylesheet" href="../Css/Style.css">
+    <link rel="stylesheet" href="../Css/Jobs.css">
 </head>
 
 <body>
     <h1>Job Finder CRUD</h1>
     <a href="../Html/login.html">LOGIN</a>
-    <a href="../Html/User.html" id="userLink">USERS</a>
+    <a href="../Html/Users.html" id="userLink">USERS</a>
     <button onclick="logOut()" id="logOut">LOGOUT</button>
+    <h2 id="hi"></h2>
 
     <div id="AddForm">
         <h3>Add</h3>
-        <form action="javascript:void(0);" onsubmit="addItem()">
+        <form action="javascript:void(0);" onsubmit="addJob()">
             <input type="text" id="Location" placeholder="Job Location"><br>
             <input type="text" id="JobFieldCategory" placeholder="Job Field Category"><br>
             <input type="number" id="Sallery" placeholder="sallery"><br>
@@ -28,7 +29,7 @@
 
     <div id="editForm">
         <h3>Edit</h3>
-        <form action="javascript:void(0);" onsubmit="editItems()">
+        <form action="javascript:void(0);" onsubmit="editJobs()">
             <input type="hidden" id="edit-Id">
             <input type="text" id="edit-Location" placeholder="Job Location"><br>
             <input type="text" id="edit-JobFieldCategory" placeholder="Job Field Category"><br>
@@ -55,7 +56,7 @@
         <tbody id="Jobs"></tbody>
     </table>
 
-    <script src="../Js/app.js" asp-append-version="true"></script>
+    <script src="../Js/Jobs.js" asp-append-version="true"></script>
     <script src="../Js/Login.js" asp-append-version="true"></script>
     <script>
         getJobs();

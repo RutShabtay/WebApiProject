@@ -1,57 +1,29 @@
-using myMiddleWareExceptions;
-using WebApiProject.Interface;
-using WebApiProject.services;
-using Serilog;
-using myLoggerMiddleWare;
-using WebApiProject.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using WebApiProject.Interface;
+using WebApiProject.Services;
+using myLoggerMiddleWare;
+using myMiddleWareExceptions;
+using WebApiProject.services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllers();
-builder.Services.AddJobFinderServices();
-builder.Services.AddTokenService();
-
-builder.Host.UseSerilog((context, config) =>
+builder.WebHost.ConfigureKestrel(options =>
 {
-    config
-        .WriteTo.Console()
-        .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day) // כתיבה לקובץ, מתחדש כל יום
-        .MinimumLevel.Debug();
+    options.ListenLocalhost(3000); // HTTP
+    options.ListenLocalhost(3001, listenOptions => { listenOptions.UseHttps(); });
 });
 
-var provider = builder.Services.BuildServiceProvider();
-var tokenService = provider.GetRequiredService<ITokenService>();
-
-builder.Services
-    .AddAuthentication(options =>
-    {
-        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(cfg =>
-    {
-        cfg.RequireHttpsMetadata = true;
-        cfg.TokenValidationParameters = tokenService.GetTokenValidationParameters();
-        cfg.TokenValidationParameters.RoleClaimType = "role";  // מוודא שהמערכת מזהה את ה-Role כמו שהוא בטוקן
-    });
-
-
-
-builder.Services.AddAuthorization(cfg =>
-    {
-        cfg.AddPolicy("SuperAdmin", policy => policy.RequireClaim("type", "SuperAdmin"));
-        cfg.AddPolicy("Admin", policy => policy.RequireClaim("type", "Admin", "SuperAdmin"));
-        cfg.AddPolicy("User", policy => policy.RequireClaim("type", "User", "Admin", "SuperAdmin"));
-    });
-
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Add services to the container.
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "WebAPIProject",
         Version = "v1",
@@ -65,36 +37,125 @@ builder.Services.AddSwaggerGen(c =>
         Type = SecuritySchemeType.ApiKey
     });
     c.AddSecurityRequirement(new OpenApiSecurityRequirement {
-                { new OpenApiSecurityScheme
-                        {
-                         Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer"}
-                        },
-                    new string[] {}
+        { new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+            },
+        new string[] {} }
+    });
+    c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.OAuth2,
+        Flows = new OpenApiOAuthFlows
+        {
+            AuthorizationCode = new OpenApiOAuthFlow
+            {
+                AuthorizationUrl = new Uri("https://accounts.google.com/o/oauth2/auth"),
+                TokenUrl = new Uri("https://oauth2.googleapis.com/token"),
+                Scopes = new Dictionary<string, string>
+                {
+                    { "openid", "OpenID Connect" },
+                    { "profile", "Access profile information" },
+                    { "email", "Access email address" }
                 }
-                });
+            }
+        }
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "oauth2"
+                }
+            },
+            new List<string>() { "openid", "profile", "email" }
+        }
+    });
 });
+
+builder.Services.AddJobFinderServices();
+builder.Services.AddTokenService();
+
+// Authentication and Authorization setup
+var provider = builder.Services.BuildServiceProvider();
+var tokenService = provider.GetRequiredService<ITokenService>();
+
+// Unified authentication setup (Google + JWT)
+builder.Services.AddAuthentication(options =>
+{
+    // options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme; // Default scheme is Cookie
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+//  .AddCookie(options =>
+//     {
+//         options.LoginPath = "/Google/Login";  // הנתיב להפניה במקרה שצריך להתחבר
+//         options.LogoutPath = "/Google/Logout"; // נתיב להתנתקות
+//         options.AccessDeniedPath = "/Home/AccessDenied"; // נתיב במקרה של גישה לא מורשית
+//     })
+// Cookie authentication setup
+// .AddGoogle(options =>
+// {
+//     var googleAuthConfig = builder.Configuration.GetSection("Authentication:Google");
+//     options.ClientId = googleAuthConfig["ClientId"];
+//     options.ClientSecret = googleAuthConfig["ClientSecret"];
+//     options.CallbackPath = "/signin-google";
+//     options.BackchannelTimeout = TimeSpan.FromMinutes(2); // Timeout extension
+//     options.Scope.Add("openid");
+//     options.Scope.Add("profile");
+//     options.Scope.Add("email");
+// })
+.AddJwtBearer(cfg =>
+{
+    var googleAuthConfig = builder.Configuration.GetSection("Authentication:Google");
+    // var clientId = googleAuthConfig["ClientId"];
+    cfg.RequireHttpsMetadata = true;
+    cfg.TokenValidationParameters = tokenService.GetTokenValidationParameters();
+    cfg.TokenValidationParameters.RoleClaimType = "role";
+    cfg.Authority = "https://accounts.google.com";
+    cfg.MetadataAddress = "https://accounts.google.com/.well-known/openid-configuration";
+    // cfg.Audience = clientId;
+    cfg.SaveToken = true;
+});
+
+
+// Authorization policies
+builder.Services.AddAuthorization(cfg =>
+{
+    cfg.AddPolicy("SuperAdmin", policy => policy.RequireClaim("type", "SuperAdmin"));
+    cfg.AddPolicy("Admin", policy => policy.RequireClaim("type", "Admin", "SuperAdmin"));
+    cfg.AddPolicy("User", policy => policy.RequireClaim("type", "User", "Admin", "SuperAdmin"));
+});
+
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
-        });
+        policy => policy.AllowAnyOrigin()  // Change this to a more restrictive policy in production
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
 });
 
 
-builder.Services.AddJobFinderServices();
-builder.Services.AddTokenService();
+// Set up logging with Serilog
+builder.Host.UseSerilog((context, config) =>
+{
+    config
+        .WriteTo.Console()
+        .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
+        .MinimumLevel.Debug();
+});
+
+// Middleware for logging and exceptions
 var app = builder.Build();
-
-
+app.UseCors("AllowAll");
 app.UseMyLogMiddleWare();
 app.useMyMiddleWareExceptions();
 
-// Configure the HTTP request pipeline.
+// HTTP request pipeline configuration
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -107,9 +168,8 @@ app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCors("AllowAll");
-
 
 app.MapControllers();
-app.MapFallbackToFile("Html/index.html");
+app.MapFallbackToFile("Html/Jobs.html");
+
 app.Run();
