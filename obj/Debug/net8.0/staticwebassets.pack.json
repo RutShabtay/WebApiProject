@@ -37,6 +37,14 @@
       "PackagePath": "staticwebassets\\Js\\User.js"
     },
     {
+      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\pictures\\CareerVistaLogo.png",
+      "PackagePath": "staticwebassets\\pictures\\CareerVistaLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\user1\\Desktop\\'תכנות שנה ב\\Core\\WebApiProject\\wwwroot\\pictures\\google-icon.svg",
+      "PackagePath": "staticwebassets\\pictures\\google-icon.svg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApiProject.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -12,6 +12,12 @@
 <body>
     <div class="login-container">
         <h2>התחברות</h2>
+    
+        <a style="margin-top: 10px;"  class="nav-link btn btn-light text-dark px-3 p-2 w-100" href="/google/login"
+            asp-controller="Google" asp-action="Login">
+            Login with Google
+            <img class="google-icon" src="/pictures/google-icon.svg" style="height: 30px;width: 40px;">
+        </a>
         <form>
 
             <label for="userName">שם משתמש:</label>
@@ -23,11 +29,6 @@
             <button type="submit">התחבר</button>
         </form>
     </div>
-    <a style="margin-top: 10px;" class="nav-link btn btn-light text-dark px-3 p-2 w-100" href="/google/login"
-        asp-controller="Google" asp-action="Login">
-        Login with Google
-        <!-- <img class="google-icon" src="./pictures/google-icon.svg" style="height: 30px;width: 40px;"> -->
-    </a>
 
     <script src="../Js/Login.js"></script>
 </body>

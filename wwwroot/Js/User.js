@@ -41,11 +41,9 @@ const displayUsers = (usersJson) => {
         let td1 = tr.insertCell(0);
         let password = document.createTextNode(element.password);
         td1.appendChild(password);
-
         let td2 = tr.insertCell(1);
         let permission = document.createTextNode(element.permission);
         td2.appendChild(permission);
-
         let td3 = tr.insertCell(2);
         let userName = document.createTextNode(element.userName);
         td3.appendChild(userName);
@@ -71,7 +69,8 @@ const getUsers = () => {
     var param = '';
     if (currentPermission === "SuperAdmin")
         param = '/GetAllUsers';
-
+    alert(currentPermission)
+    alert(`${userUrl}${param}`)
     fetch(`${userUrl}${param}`, {
         method: 'Get',
         headers: {
@@ -235,4 +234,47 @@ const logOut = () => {
 
 
 
+// פונקציה לשמירת הטוקן ב-localStorage
+const saveToken = (token) => {
+    localStorage.setItem("Token", token);
+};
 
+if (localStorage.getItem("Token") == null) {
+
+    fetch("/Google/GoogleResponse")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(text => {
+            if (!text) {
+                throw new Error("Empty response received");
+            }
+            return JSON.parse(text);
+        })
+        .then((data) => {
+            if (data.token) {
+                console.log("Token received from Google...");
+                saveToken(data.token);
+                init();
+            } else {
+                console.error("No token received from Google", data);
+            }
+        })
+        .catch((err) => {
+            console.error("Error occurred while fetching Google token:", err);
+        });
+}
+
+// פונקציה להתחלת פעולות לאחר שמירת הטוקן
+const init = () => {
+    const token = localStorage.getItem("Token");
+    if (!token) {
+        alert("אין הרשאה. נא להתחבר.");
+        window.location.href = "/Jobs.html"; // מחזיר לדף ההתחברות אם לא קיים טוקן
+    }
+    location.href = "Jobs.html"
+    getJobs();
+}
