@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WebApiProject.Models;
@@ -68,12 +69,11 @@ namespace WebApiProject.Services
             var handler = new JwtSecurityTokenHandler();
             var jsonToken = handler.ReadJwtToken(currentToken) as JwtSecurityToken;
             var userIdClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "password")?.Value;
-
+            System.Console.WriteLine(userIdClaim);
             if (string.IsNullOrEmpty(userIdClaim))
                 return new ObjectResult("User Password not found in token") { StatusCode = 400 };
 
             return new ObjectResult(userIdClaim) { StatusCode = 200 };
-
         }
 
         //get userRole from token by his claim.

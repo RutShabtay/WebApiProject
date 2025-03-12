@@ -1,25 +1,331 @@
-input[type='submit'],
-button,
-[aria-label] {
-    cursor: pointer;
+:root {
+    --primary-color: #2C3E50;
+    --accent-color: #2980B9;
+    --background-color: #ecf0f1;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --input-border-color: #BDC3C7;
+    --modal-background: rgba(0, 0, 0, 0.5);
+    --button-hover-color:  #5d000b;
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-#editForm {
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    max-width: 300px;
+    display: block;
+    margin-top: -15px;
+}
+
+h2,
+h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 10px 0;
+}
+
+#counter {
+    font-family: 'Dancing Script', cursive;
+    font-size: 19px;
+    color: #5d000b;
+    text-align: right;
+    margin-left: -970px;
+    margin-top: 20px;
+    padding: 10px;
+    position: relative;
+    margin-bottom: -30px;
+    z-index: -100;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+#authLinks {
+    position: absolute;
+    left: 157px;
+    top: 130px;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+a#allJob {
+    margin-top: 11px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+a#allJob:hover {
+    background-color: var(--accent-color);
+}
+
+button,
+#logOut {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin: 10px;
+}
+
+button:hover,
+#logOut:hover {
+    background-color: var(--accent-color);
+}
+
+#logOut {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#logOut:hover {
+    background-color: var(--accent-color);
+}
+
+a,
+button {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#addUser {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-right: -68.5%;
+    margin-top: 1%;
+    margin-bottom: -3%;
+}
+
+#addUser:hover {
+    background-color: var(--accent-color);
+}
+
+#AddForm {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-color: var(--modal-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#AddForm form {
+    margin-top: 10%;
+    margin-left: 30% ;
+}
+
+#EditForm {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-color: var(--modal-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+#EditForm form {
+    margin-top: 10%;
+    margin-left: 30% ;
+}
+
+
+#AddForm form,
+#EditForm form {
+    background: var(--card-background);
+    padding: 30px;
+    padding-right: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    width: 84%;
+    max-width: 600px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#AddForm h3,
+#EditForm h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    background: var(--background-color);
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--input-border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--text-color);
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid var(--accent-color);
+    outline: none;
+}
+
+input[type="submit"] {
+    background: linear-gradient(135deg, var(--accent-color), var(--button-hover));
+    background-color: var(--accent-color); /* צבע עיקרי */
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    text-transform: uppercase; /* אותיות גדולות */
+    font-weight: bold; /* דגש על משקל */
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+#AddForm a,
+#EditForm a {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+#AddForm a:hover,
+#EditForm a:hover {
+    color: #000000;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 table {
-    font-family: Arial, sans-serif;
-    border: 1px solid;
+    width: 80%;
+    margin: 40px auto;
     border-collapse: collapse;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+th, td {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+table:hover {
+    transform: scale(1.02);
 }
 
 th {
-    background-color: #f8f8f8;
-    padding: 5px;
+    padding: 20px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: rgba(41, 128, 185, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
 td {
-    border: 1px solid;
-    padding: 5px;
+    padding: 15px;
+    font-size: 16px;
+    color: var(--text-color);
+    border-bottom: 1px solid #ddd;
+}
+
+@keyframes gentleScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+img {
+    max-width: 300px;
+    display: block;
+    margin-top: -15px;
+    animation: gentleScale 5s ease-in-out infinite;
+    animation-delay: 5min;
 }

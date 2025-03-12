@@ -1,8 +1,18 @@
 [
   {
-    "password": "bob!!",
-    "permission": "user",
-    "userName": "Bob"
+    "password": "RSS-",
+    "permission": "SuperAdmin",
+    "userName": "RUTHI"
+  },
+  {
+    "password": null,
+    "permission": null,
+    "userName": null
+  },
+  {
+    "password": null,
+    "permission": null,
+    "userName": null
   },
   {
     "password": "11111!",
@@ -10,7 +20,7 @@
     "userName": "aaa"
   },
   {
-    "password": "11111",
+    "password": "",
     "permission": "Admin",
     "userName": "WWW"
   },
@@ -20,23 +30,13 @@
     "userName": "WWW"
   },
   {
-    "password": "11111",
+    "password": "1111199",
     "permission": "Admin",
     "userName": "WWW"
   },
   {
     "password": "11111",
     "permission": "Admin",
-    "userName": "aaa"
-  },
-  {
-    "password": "11111",
-    "permission": "Admin",
     "userName": "WWW"
-  },
-  {
-    "password": "RSS-",
-    "permission": "SuperAdmin",
-    "userName": "RUTHI"
   }
 ]

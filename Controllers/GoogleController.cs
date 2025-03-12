@@ -15,16 +15,13 @@ namespace WebApi.Controllers;
 [ApiController]
 public class GoogleController : ControllerBase
 {
-    /// <summary>
-    /// התחברות דרך Google
-    /// </summary>
     [HttpGet]
     [HttpGet("Login")]
     public IActionResult Login()
     {
         var properties = new AuthenticationProperties
         {
-            RedirectUri = "/Html/Users.html" // תוודא שכתובת ה- URL הזו נכונה
+            RedirectUri = "/Html/Users.html"
         };
         return Challenge(properties, GoogleDefaults.AuthenticationScheme);
     }
@@ -49,24 +46,19 @@ public class GoogleController : ControllerBase
             Console.WriteLine($"Claim Type: {claim.Type}, Value: {claim.Value}");
         }
 
-        // קבלי את טוקן הגישה של גוגל
         var googleAccessToken = result.Properties.GetTokenValue("access_token");
 
-        // כאן מבוצע מיפוי השדות
         var googleClaims = result.Principal.Identities
             .FirstOrDefault()?
             .Claims.ToDictionary(c => c.Type, c => c.Value);
 
-        // מיפוי של השדות מגוגל לשדות הנדרשים בטוקן שלך
         var password = googleClaims.ContainsKey(ClaimTypes.NameIdentifier) ? googleClaims[ClaimTypes.NameIdentifier] : string.Empty;
         var name = googleClaims.ContainsKey(ClaimTypes.Name) ? googleClaims[ClaimTypes.Name] : string.Empty;
 
-        // אקראי: הגרלת סוג משתמש מתוך שלושה אפשרויות
         var userTypes = new[] { "Admin", "user", "SuperAdmin" };
         var random = new Random();
         var selectedType = userTypes[random.Next(userTypes.Length)]; // בוחר אקראית אחד מהערכים
 
-        // צור טוקן משלך
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes("YourSuperSecretKey");
         var tokenDescriptor = new SecurityTokenDescriptor
@@ -75,9 +67,9 @@ public class GoogleController : ControllerBase
             new[]
             {
             new Claim("password", password),
-            new Claim("userName", name), // כאן אנחנו מכניסים את ה-email ממיפוי השדות
-            new Claim("GoogleAccessToken", googleAccessToken ?? ""), // שמור את ה-Token שלך כאן
-            new Claim("type", selectedType) // סוג המשתמש שנבחר אקראית
+            new Claim("userName", name),
+            new Claim("GoogleAccessToken", googleAccessToken ?? ""),
+            new Claim("type", selectedType),
             }),
             Expires = DateTime.UtcNow.AddHours(1),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -88,9 +80,6 @@ public class GoogleController : ControllerBase
         return Ok(new { Token = jwtToken, GoogleAccessToken = googleAccessToken, Claims = claims });
     }
 
-    /// <summary>
-    /// החזרת פרטי המשתמש המחובר
-    /// </summary>
     [HttpGet]
     [Route("[action]")]
     [Authorize]
@@ -99,9 +88,6 @@ public class GoogleController : ControllerBase
         return Ok(GetUserClaims());
     }
 
-    /// <summary>
-    /// התנתקות מהמערכת
-    /// </summary>
     [HttpGet]
     [Route("[action]")]
     public IActionResult Logout()
@@ -109,9 +95,6 @@ public class GoogleController : ControllerBase
         return SignOut(CookieAuthenticationDefaults.AuthenticationScheme);
     }
 
-    /// <summary>
-    /// פונקציה עוזרת לשליפת פרטי המשתמש
-    /// </summary>
     private object GetUserClaims()
     {
         return new

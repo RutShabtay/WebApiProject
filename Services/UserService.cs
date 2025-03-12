@@ -12,7 +12,6 @@ namespace WebApiProject.services
     public class UserService : IUserFinderService
     {
         private readonly string jsonFilePath = "./JsonFiles/Users.json";
-
         public IEnumerable<User> GetAllUsers()
         {
             List<Object> objectList = GeneralService.ReadFromJsonFile(jsonFilePath, "user");
@@ -26,20 +25,10 @@ namespace WebApiProject.services
             return currentUser;
         }
 
-
         public ActionResult post(User newUser)
         {
-            // var claims = new List<Claim>
-            // {
-            //     new Claim("type", "GeneralUser"),
-            //     new Claim("permission", newUser.permission.ToString()),
-            //     new Claim("password",newUser.password.ToString())
-            // };
-
-            // var token = JobFinderTokenService.GetToken(claims);
             GeneralService.WriteToJsonFile(jsonFilePath, newUser, "user");
             return new OkObjectResult("User added successfully");
-            // return new OkObjectResult(JobFinderTokenService.WriteToken(token));
         }
 
         public ActionResult Put(User userToUpdate, string password)
@@ -55,7 +44,7 @@ namespace WebApiProject.services
 
         public IActionResult Delete(string password)
         {
-            
+
             var users = GeneralService.ReadFromJsonFile(jsonFilePath, "user").Cast<User>().ToList();
             var userToDelete = users.Find(u => u.password == password);
             if (userToDelete == null)

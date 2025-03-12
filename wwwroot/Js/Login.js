@@ -1,13 +1,9 @@
-const url = "/Login"; // כתובת ה-API להתחברות
+const url = "/Login";
 
-// הגדרת הדומ של האלמנטים
 const dom = {
     password: document.getElementById('password'),
     userName: document.getElementById('userName')
 }
-
-
-// הוספת מאזין לאירוע של שליחת הטופס
 
 document.querySelector("form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -21,15 +17,14 @@ document.querySelector("form").addEventListener("submit", async (e) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(item)
-
         });
 
         if (!response.ok) {
             let errorData;
             try {
-                errorData = await response.json(); // ננסה לקבל את המידע מהשרת
+                errorData = await response.json();
             } catch (jsonError) {
-                errorData = { message: "Unknown error occurred" }; // אם זה לא JSON
+                errorData = { message: "Unknown error occurred" };
             }
 
             const error = new Error(errorData.message);

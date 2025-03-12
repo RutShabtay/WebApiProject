@@ -26,7 +26,7 @@ namespace WebApiProject.Services
                 ValidIssuer = issuer,
                 ValidAudience = issuer,
                 IssuerSigningKey = key,
-                ClockSkew = TimeSpan.Zero // remove delay of token when expire
+                ClockSkew = TimeSpan.Zero 
             };
 
         public string WriteToken(SecurityToken token) =>

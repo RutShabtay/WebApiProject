@@ -5,22 +5,27 @@ let usersArr = [];
 let currentPermission = null;
 let currentPassword = null;
 
-const getUserPermission = () => {
+const onLoad = () => {
+
+    document.getElementById('AddForm').style.display = "none";
+    document.getElementById("EditForm").style.display = "none";
+
     let token = localStorage.getItem("Token");
     const payload = token.split('.')[1];
     const decodedPayload = JSON.parse(atob(payload));
     currentPermission = decodedPayload.type;
     currentPassword = decodedPayload.password;
     console.log(currentPermission)
-    if (currentPermission !== "SuperAdmin")
-        document.getElementById("AddForm").style.display = "none";
+    if (currentPermission !== "SuperAdmin") {
+        document.getElementById('addUser').style.display = "none";
+    }
     else
-        document.getElementById("AddForm").style.display = "block";
+        document.getElementById("addUser").style.display = "block";
 
 
 }
 document.addEventListener("DOMContentLoaded", function () {
-    getUserPermission();
+    onLoad();
 });
 
 const displayUsers = (usersJson) => {
@@ -65,14 +70,12 @@ const displayUsers = (usersJson) => {
 
 
 const getUsers = () => {
-    getUserPermission();
+    onLoad();
     var param = '';
     if (currentPermission === "SuperAdmin")
         param = '/GetAllUsers';
-    alert(currentPermission)
-    alert(`${userUrl}${param}`)
     fetch(`${userUrl}${param}`, {
-        method: 'Get',
+        method: 'GET',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem("Token")}`,
             'Accept': 'application/json',
@@ -80,7 +83,7 @@ const getUsers = () => {
         },
     })
         .then(Response => {
-            return Response.json();  // מחזירים את ה-Promise של ה-json
+            return Response.json();
         })
         .then(
             (data) => {
@@ -97,7 +100,7 @@ const getUsers = () => {
 
 const updateCounter = (itemCount) => {
     let counter = document.getElementById("counter");
-    counter.innerHTML = itemCount;
+    counter.innerHTML = "There are " + itemCount + " users enjoying our services :";
 }
 
 const addUser = () => {
@@ -172,7 +175,7 @@ const displayEditForm = (password) => {
     document.getElementById('edit-Permission').value = userToEdit.permission;
     document.getElementById('edit-UserName').value = userToEdit.userName;
 
-    document.getElementById('editForm').style.display = 'block';
+    document.getElementById('EditForm').style.display = 'block';
 
 }
 
@@ -220,12 +223,6 @@ const editUser = () => {
     return false;
 }
 
-
-
-const closeInput = () => {
-    document.getElementById('editForm').style.display = 'none';
-}
-
 const logOut = () => {
     localStorage.removeItem("Token");
     location.href = "Jobs.html";
@@ -233,8 +230,6 @@ const logOut = () => {
 
 
 
-
-// פונקציה לשמירת הטוקן ב-localStorage
 const saveToken = (token) => {
     localStorage.setItem("Token", token);
 };
@@ -268,13 +263,22 @@ if (localStorage.getItem("Token") == null) {
         });
 }
 
-// פונקציה להתחלת פעולות לאחר שמירת הטוקן
 const init = () => {
     const token = localStorage.getItem("Token");
     if (!token) {
         alert("אין הרשאה. נא להתחבר.");
-        window.location.href = "/Jobs.html"; // מחזיר לדף ההתחברות אם לא קיים טוקן
+        window.location.href = "/Jobs.html";
     }
     location.href = "Jobs.html"
     getJobs();
+}
+
+const showAddForm = () => {
+
+    document.getElementById('AddForm').style.display = "block";
+}
+
+const closeInput = () => {
+    document.getElementById('AddForm').style.display = 'none';
+    document.getElementById('EditForm').style.display = 'none';
 }

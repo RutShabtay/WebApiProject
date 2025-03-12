@@ -1,42 +1,32 @@
 [
   {
-    "password": "bob!!",
-    "permission": "user",
-    "userName": "Bob"
-  },
-  {
-    "password": "11111!",
-    "permission": "Admin",
-    "userName": "aaa"
-  },
-  {
-    "password": "11111",
-    "permission": "Admin",
-    "userName": "WWW"
-  },
-  {
-    "password": "1",
-    "permission": "Admin",
-    "userName": "WWW"
-  },
-  {
-    "password": "11111",
-    "permission": "Admin",
-    "userName": "WWW"
-  },
-  {
-    "password": "11111",
-    "permission": "Admin",
-    "userName": "aaa"
-  },
-  {
-    "password": "11111",
-    "permission": "Admin",
-    "userName": "WWW"
-  },
-  {
-    "password": "RSS-",
+    "password": "RSS",
     "permission": "SuperAdmin",
     "userName": "RUTHI"
+  },
+  {
+    "password": "Ruti",
+    "permission": "Admin",
+    "userName": "Ruti"
+  },
+  {
+    "password": "Michal@789",
+    "permission": "user",
+    "userName": "Michal"
+  },
+  {
+    "password": "Daniel#999",
+    "permission": "Admin",
+    "userName": "Daniel"
+  },
+  {
+    "password": "NoaStrongPass1",
+    "permission": "user",
+    "userName": "Noa"
+  },
+  {
+    "password": "YosefSafeKey",
+    "permission": "Admin",
+    "userName": "Yosef"
   }
 ]

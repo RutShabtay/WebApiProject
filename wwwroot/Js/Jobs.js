@@ -6,6 +6,9 @@ let currentPassword = null;
 let userName = null;
 
 const onLoad = () => {
+    document.getElementById('jobsAddForm').style.display = "none";
+    document.getElementById('jobsEditForm').style.display = "none";
+
     let token = localStorage.getItem("Token");
     if (token == null) {
         document.getElementById('logOut').style.display = "none";
@@ -19,19 +22,18 @@ const onLoad = () => {
         currentPassword = decodedPayload.password;
         userName = decodedPayload.userName;
     }
-    if (currentPermission === "user" || currentPermission == null)
-        document.getElementById("AddForm").style.display = "none";
+    if (currentPermission === "user" || currentPermission == null) {
+        document.getElementById("addJob").style.display = "none";
+    }
     else
-        document.getElementById("AddForm").style.display = "block";
-
+        document.getElementById("addJob").style.display = "block";
 
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+
     onLoad();
 });
-
-
 
 const getJobs = () => {
 
@@ -45,11 +47,13 @@ const getJobs = () => {
 
 const updateCounter = (itemCount) => {
     let counter = document.getElementById("counter");
-    counter.innerHTML = "There are " + itemCount + " jobs waiting especially for you";
+    counter.innerHTML = "There are " + itemCount + " jobs waiting especially for you:";
 }
 
 const addJob = () => {
 
+    const now = new Date().toISOString();
+    document.getElementById("PostedDate").value = now;
     const newJob = {
         "location": document.getElementById('Location').value.trim() === "" || document.getElementById('Location').value.trim() === undefined ? null : document.getElementById('Location').value.trim(),
         "jobFieldCategory": document.getElementById('JobFieldCategory').value.trim() === "" || document.getElementById('JobFieldCategory').value.trim() === undefined ? null : document.getElementById('JobFieldCategory').value.trim(),
@@ -152,30 +156,9 @@ const displayJobs = (jobsJson) => {
             let td7 = tr.insertCell(6);
             td7.appendChild(deleteButton);
         }
-
-
     });
     jobsArr = jobsJson;
 }
-
-const displayEditForm = (id) => {
-    var jobToEdit;
-    jobsArr.forEach((item) => {
-        if (item.jobId == id)
-            jobToEdit = item;
-    });
-
-    document.getElementById('edit-Id').value = jobToEdit.jobId;
-    document.getElementById('edit-Location').value = jobToEdit.location;
-    document.getElementById('edit-JobFieldCategory').value = jobToEdit.jobFieldCategory;
-    document.getElementById('edit-Sallery').value = jobToEdit.sallery;
-    document.getElementById('edit-JobDescription').value = jobToEdit.jobDescription
-    document.getElementById('edit-PostedDate').value = jobToEdit.postedDate;
-
-    document.getElementById('editForm').style.display = 'block';
-
-}
-
 const editJobs = () => {
 
     var itemId = document.getElementById('edit-Id').value;
@@ -206,21 +189,33 @@ const editJobs = () => {
     return false;
 }
 
-
-const closeInput = () => {
-    document.getElementById('editForm').style.display = 'none';
-}
-
 const logOut = () => {
     localStorage.removeItem("Token");
     location.href = "Jobs.html";
 }
 
+const showAddForm = () => {
 
+    document.getElementById('jobsAddForm').style.display = "block";
+    const now = new Date().toISOString();
+    document.getElementById("PostedDate").value = now;
 
+}
 
+const closeInput = () => {
+    document.getElementById('jobsAddForm').style.display = 'none';
+    document.getElementById('jobsEditForm').style.display = 'none';
+}
 
+const displayEditForm = (id) => {
+    let jobToEdit = jobsArr.find(item => item.jobId === id);
 
+    document.getElementById('edit-Id').value = jobToEdit.jobId;
+    document.getElementById('edit-Location').value = jobToEdit.location;
+    document.getElementById('edit-JobFieldCategory').value = jobToEdit.jobFieldCategory;
+    document.getElementById('edit-Sallery').value = jobToEdit.sallery;
+    document.getElementById('edit-JobDescription').value = jobToEdit.jobDescription;
+    document.getElementById('edit-PostedDate').value = jobToEdit.postedDate;
 
-
-
+    document.getElementById('jobsEditForm').style.display = 'flex';
+};

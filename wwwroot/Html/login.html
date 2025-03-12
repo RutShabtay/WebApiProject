@@ -6,20 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/Login.css">
     <title>Login</title>
-
 </head>
 
 <body>
     <div class="login-container">
         <h2>התחברות</h2>
-    
-        <a style="margin-top: 10px;"  class="nav-link btn btn-light text-dark px-3 p-2 w-100" href="/google/login"
-            asp-controller="Google" asp-action="Login">
-            Login with Google
-            <img class="google-icon" src="/pictures/google-icon.svg" style="height: 30px;width: 40px;">
-        </a>
-        <form>
 
+        <a class="google-login-btn" href="/google/login" asp-controller="Google" asp-action="Login">
+            <img class="google-icon" src="/pictures/google-icon.svg" alt="Google Icon">
+            Login with Google
+        </a>
+
+        <form>
             <label for="userName">שם משתמש:</label>
             <input type="text" id="userName" name="userName" required>
 

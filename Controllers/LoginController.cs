@@ -25,12 +25,6 @@ namespace WebApiProject.Controllers
             var claims = new List<Claim>();
             var users = GeneralService.ReadFromJsonFile(jsonFilePath, "user").Cast<User>().ToList();
             var currentUser = users.Find(c => c.password == User.password);
-            // if ((User.userName == "Malki" && User.password == "ML")
-            //     || (User.userName == "Ruti" && User.password == "RS"))
-            // {
-            //     claims.Add(new Claim("type", "SuperAdmin"));
-            // }
-
             if (currentUser == null || !currentUser.userName.Equals(User.userName))
             {
                 return Unauthorized();

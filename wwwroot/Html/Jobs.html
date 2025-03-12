@@ -4,51 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JobFinderApi</title>
+    <title>CareerVista</title>
     <link rel="stylesheet" href="../Css/Jobs.css">
 </head>
 
 <body>
-    <h1>Job Finder CRUD</h1>
     <img src="/pictures/CareerVistaLogo.png" alt="careerVistaLogo">
-    <a href="../Html/login.html">LOGIN</a>
-    <a href="../Html/Users.html" id="userLink">USERS</a>
-    <button onclick="logOut()" id="logOut">LOGOUT</button>
+    <div id="authLinks">
+        <a href="../Html/login.html" id="login">LOGIN</a>
+        <button onclick="logOut()" id="logOut">LOGOUT</button>
+        <a href="../Html/Users.html" id="userLink">USERS</a>
+    </div>
     <h2 id="hi"></h2>
+    <button id="addJob" onclick="showAddForm()">Add JOB ➕</button>
 
-    <div id="AddForm">
-        <h3>Add</h3>
-        <form action="javascript:void(0);" onsubmit="addJob()">
-            <input type="text" id="Location" placeholder="Job Location"><br>
-            <input type="text" id="JobFieldCategory" placeholder="Job Field Category"><br>
-            <input type="number" id="Sallery" placeholder="sallery"><br>
-            <textarea id="JobDescription" rows="5" cols="40" placeholder="Job Description"></textarea><br>
-            <input type="datetime" id="PostedDate" placeholder="Posted Date"><br>
-            <input type="submit" value="Add">
-        </form>
+    <!-- Modal Form for Adding Job -->
+    <div id="jobsAddForm">
+        <div>
+            <form action="javascript:void(0);" onsubmit="addJob()">
+                <input type="text" id="Location" placeholder="Job Location" required><br>
+                <input type="text" id="JobFieldCategory" placeholder="Job Field Category" required><br>
+                <input type="number" id="Sallery" placeholder="Salary" required><br>
+                <textarea id="JobDescription" rows="5" cols="40" placeholder="Job Description" required></textarea><br>
+                <input type="datetime" id="PostedDate" placeholder="Posted Date  yyyy-MM-ddTHH:mm:ss.fffZ" required><br>
+                <input type="submit" value="Add">
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
     </div>
 
-    <div id="editForm">
-        <h3>Edit</h3>
-        <form action="javascript:void(0);" onsubmit="editJobs()">
-            <input type="hidden" id="edit-Id">
-            <input type="text" id="edit-Location" placeholder="Job Location"><br>
-            <input type="text" id="edit-JobFieldCategory" placeholder="Job Field Category"><br>
-            <input type="number" id="edit-Sallery" placeholder="Sallery"><br>
-            <textarea id="edit-JobDescription" rows="5" cols="40" placeholder="Job Description"></textarea><br>
-            <input type="datetime" id="edit-PostedDate" placeholder="Posted Date"><br>
-            <input type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-        </form>
+    <!-- Modal Form for Editing Job -->
+    <div id="jobsEditForm">
+        <div>
+            <form action="javascript:void(0);" onsubmit="editJobs()">
+                <input type="hidden" id="edit-Id" >
+                <input type="text" id="edit-Location" placeholder="Job Location" required><br>
+                <input type="text" id="edit-JobFieldCategory" placeholder="Job Field Category" required><br>
+                <input type="number" id="edit-Sallery" placeholder="Salary" required><br>
+                <textarea id="edit-JobDescription" rows="5" cols="40" placeholder="Job Description" required></textarea><br>
+                <input type="datetime" id="edit-PostedDate" placeholder="Posted Date" required><br>
+                <input type="submit" value="Save">
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
     </div>
 
-    <p id="counter"></p>
-
+    <h2 id="counter"></h2>
     <table>
         <tr>
             <th>Job Location</th>
             <th>Job Field Category</th>
-            <th>Sallery</th>
+            <th>Salary</th>
             <th>Job Description</th>
             <th>Posted Date</th>
             <th></th>
@@ -62,7 +68,6 @@
     <script>
         getJobs();
     </script>
-
 </body>
 
 </html>
