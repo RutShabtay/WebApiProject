@@ -1,14 +1,5 @@
 [
   {
-    "JobId": 106,
-    "Location": "Tel Aviv",
-    "JobFieldCategory": "Software Development",
-    "Sallery": 50000,
-    "JobDescription": "Full-Stack Developer specializing in React and Node.js.",
-    "PostedDate": "2025-03-11T10:00:00Z",
-    "CreatedBy": "Ruti"
-  },
-  {
     "JobId": 108,
     "Location": "Jerusalem",
     "JobFieldCategory": "Cyber Security",
@@ -22,7 +13,7 @@
     "Location": "Haifa",
     "JobFieldCategory": "Data Science",
     "Sallery": 15000,
-    "JobDescription": "Data Scientist with a focus on machine learning and AI.",
+    "JobDescription": "Data Scientist with a focus on machine learning and AI.😉",
     "PostedDate": "2025-03-01T15:45:00Z",
     "CreatedBy": "RS"
   },
@@ -58,7 +49,7 @@
     "Location": "Herzliya",
     "JobFieldCategory": "Cyber Security",
     "Sallery": 27000,
-    "JobDescription": "Cyber Security Analyst with experience in ethical hacking.",
+    "JobDescription": "Cyber Security Analyst with experience in ethical hacking. Amazingggg job!!!😊😊😊",
     "PostedDate": "2025-03-08T14:30:00Z",
     "CreatedBy": "Ruti"
   },
@@ -106,14 +97,5 @@
     "JobDescription": "Cloud Engineer with AWS and Azure experience.",
     "PostedDate": "2025-03-03T09:30:00Z",
     "CreatedBy": "Ruti"
-  },
-  {
-    "JobId": 208,
-    "Location": "Netanya",
-    "JobFieldCategory": "Artificial Intelligence",
-    "Sallery": 28000,
-    "JobDescription": "AI Researcher working on NLP and deep learning models.",
-    "PostedDate": "2025-03-02T13:20:00Z",
-    "CreatedBy": "Daniel#999"
   }
 ]

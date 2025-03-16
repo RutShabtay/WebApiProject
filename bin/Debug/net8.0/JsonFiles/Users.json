@@ -1,42 +1,27 @@
 [
   {
-    "password": "RSS-",
+    "password": "RSS",
     "permission": "SuperAdmin",
     "userName": "RUTHI"
   },
   {
-    "password": null,
-    "permission": null,
-    "userName": null
-  },
-  {
-    "password": null,
-    "permission": null,
-    "userName": null
-  },
-  {
-    "password": "11111!",
+    "password": "Ruti",
     "permission": "Admin",
-    "userName": "aaa"
+    "userName": "Ruti"
   },
   {
-    "password": "",
-    "permission": "Admin",
-    "userName": "WWW"
+    "password": "Michal@789",
+    "permission": "user",
+    "userName": "Michal"
   },
   {
-    "password": "1",
+    "password": "Daniel#999",
     "permission": "Admin",
-    "userName": "WWW"
+    "userName": "Daniel"
   },
   {
-    "password": "1111199",
-    "permission": "Admin",
-    "userName": "WWW"
-  },
-  {
-    "password": "11111",
-    "permission": "Admin",
-    "userName": "WWW"
+    "password": "NoaStrongPass1",
+    "permission": "user",
+    "userName": "Noa"
   }
 ]

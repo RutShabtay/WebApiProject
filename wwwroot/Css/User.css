@@ -6,13 +6,15 @@
     --text-color: #333333;
     --input-border-color: #BDC3C7;
     --modal-background: rgba(0, 0, 0, 0.5);
-    --button-hover-color:  #5d000b;
+    --button-hover-color: #5d000b;
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
+    background: linear-gradient(135deg, #ecf0f1, #d8ecf4, #ecf0f1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s infinite alternate ease-in-out;
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -160,7 +162,7 @@ button {
 
 #AddForm form {
     margin-top: 10%;
-    margin-left: 30% ;
+    margin-left: 30%;
 }
 
 #EditForm {
@@ -176,9 +178,10 @@ button {
     align-items: center;
     z-index: 10000;
 }
+
 #EditForm form {
     margin-top: 10%;
-    margin-left: 30% ;
+    margin-left: 30%;
 }
 
 
@@ -225,7 +228,8 @@ textarea:focus {
 
 input[type="submit"] {
     background: linear-gradient(135deg, var(--accent-color), var(--button-hover));
-    background-color: var(--accent-color); /* צבע עיקרי */
+    background-color: var(--accent-color);
+    /* צבע עיקרי */
     color: rgb(255, 255, 255);
     font-size: 18px;
     padding: 12px;
@@ -233,8 +237,10 @@ input[type="submit"] {
     border-radius: 6px;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
-    text-transform: uppercase; /* אותיות גדולות */
-    font-weight: bold; /* דגש על משקל */
+    text-transform: uppercase;
+    /* אותיות גדולות */
+    font-weight: bold;
+    /* דגש על משקל */
     width: 100%;
 }
 
@@ -282,7 +288,8 @@ table {
     transition: transform 0.3s ease;
 }
 
-th, td {
+th,
+td {
     font-weight: bold;
     font-size: 18px;
     color: #333;
@@ -317,9 +324,17 @@ td {
 }
 
 @keyframes gentleScale {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 img {
@@ -328,4 +343,14 @@ img {
     margin-top: -15px;
     animation: gentleScale 5s ease-in-out infinite;
     animation-delay: 5min;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }

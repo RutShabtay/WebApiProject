@@ -23,10 +23,5 @@
     "password": "NoaStrongPass1",
     "permission": "user",
     "userName": "Noa"
-  },
-  {
-    "password": "YosefSafeKey",
-    "permission": "Admin",
-    "userName": "Yosef"
   }
 ]

@@ -83,8 +83,9 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // הוספת שירותים מותאמים אישית
-builder.Services.AddJobFinderServices();
+builder.Services.AddJobService();
 builder.Services.AddTokenService();
+builder.Services.AddUserService();
 
 // הגדרת אימות עם תמיכה ב-JWT, Google ו-Cookies
 var provider = builder.Services.BuildServiceProvider();
